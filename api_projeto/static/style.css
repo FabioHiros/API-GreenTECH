@@ -1,0 +1,27 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+.vertical-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #a0cc78;
+  padding: 5px;
+  border-radius: 5px 5px 5px 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  height: 98.89%;
+}
+.vertical-button:hover {
+  background-color: #7cbd40;
+}
+/* Adjust this class to fit your content layout */
+.content {
+  margin-left: 100px; /* Adjust according to the width of the button */
+  padding: 20px;
+}
