@@ -1,4 +1,7 @@
 /* Estilo para o container vertical */
+.mobile-links {
+  display: none;
+}
 .vertical-div {
   display: flex; /* Usando flexbox para o layout */
   flex-direction: column; /* Coluna para dispor verticalmente os elementos */
@@ -48,4 +51,38 @@
 /* Estilo para o conteúdo principal */
 .content {
   margin-left: 80px; /* Adiciona margem à esquerda para evitar sobreposição com o container vertical */
+}
+
+
+@media screen and (max-width: 768px) {
+  .vertical-div {
+      display: none; /* Hide the vertical-div on mobile */
+  }
+  .mobile-links {
+      position: fixed;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: space-around;
+      width: 80%;
+  }
+  .mobile-links a img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin: 0;
+  }
+  .mobile-links a {
+      text-decoration: none;
+      width: 60px; /* Set width of buttons */
+      height: 60px; /* Set height of buttons */
+      border-radius: 50%;
+      line-height: 95px;
+      text-align: center; /* Center content horizontally */
+      background-color: #84b454; /* Button background color */
+  }
+  .content {
+    margin-left: 5%;
+  }
 }
