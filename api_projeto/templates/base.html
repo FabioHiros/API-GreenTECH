@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/static/normalize.css">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body style="background-color:#f8f7d9;">
+  <div class="vertical-div">
+    <a href="/" {% if current_page == 'home' %}class="current-page"{% endif %}><img src="../static/images/home-icon.png" alt="home"></a>
+    <a href="/" {% if current_page == 'agua' %}class="current-page"{% endif %}><img src="../static/images/agua-icon.png" alt="home"></a>
+    <a href="/" {% if current_page == 'planta' %}class="current-page"{% endif %}><img src="../static/images/planta-icon.png" alt="home"></a>
+    <a href="/" {% if current_page == 'temperatura' %}class="current-page"{% endif %}><img src="../static/images/temperatura-icon.png" alt="home"></a>
+  </div>
+  {% block content %}
+  {% endblock %}
+</body>
+</html>

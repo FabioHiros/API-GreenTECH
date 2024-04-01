@@ -3,8 +3,9 @@ body, html {
   padding: 0;
   height: 100%;
 }
-.vertical-button {
+.vertical-div {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: fixed;
@@ -12,16 +13,33 @@ body, html {
   top: 0;
   background-color: #a0cc78;
   padding: 5px;
-  border-radius: 5px 5px 5px 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  height: 98.89%;
+  border-radius: 10px;
+  height: 98.89vh;
+  width: 30px;
 }
-.vertical-button:hover {
-  background-color: #7cbd40;
+.vertical-div a {
+  display: block;
+  margin: 25px;
+  color: #000; /* Default link color */
+  text-decoration: none; /* Remove underline */
+}
+.vertical-div a img {
+  width: 25px;
+  height: 25px;
 }
 /* Adjust this class to fit your content layout */
 .content {
-  margin-left: 100px; /* Adjust according to the width of the button */
-  padding: 20px;
+  margin-left: 50px; /* Adjust according to the width of the button */ 
+}
+
+.current-page::before {
+  content: "";
+  position: absolute;
+  left: 40px; /* Adjust as needed */
+  margin-top: 15px;
+  transform: translateY(-50%);
+  width: 5px; /* Width of the indicator */
+  height: 32px; /* Height of the indicator */
+  background-color: green; /* Color of the indicator */
+  border-radius: 0 5px 5px 0; /* Adjust for rounded corners */
 }
