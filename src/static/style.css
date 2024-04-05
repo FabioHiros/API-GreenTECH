@@ -1,3 +1,16 @@
 .nav-item:hover{
     transform: scale(1.1);
 }
+
+.resize_grafico_home img{
+    width: 1.1;
+}
+
+@media (max-width: 991.98px) {
+    .resize_grafico_home img{
+        width: 90vw;
+    }
+    .container_grafinfo{
+        display: none;
+    }
+}
