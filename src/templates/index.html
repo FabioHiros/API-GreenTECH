@@ -8,11 +8,14 @@
     <div class="row align-items-start">
             <div class="col-12 d-flex justify-content-center bg-light"> <!-- 'bg-light' ta sendo usado só pra mostrar o tamanho dessa div, depois de ajustar pode remover -->
                 <div class="resize_grafico_home">
-                    <img src="../static/images/grafico.png" alt="grafico">
+                    <img src="../static/images/grafico.png" alt="grafico"> <!-- Se encontrar ou algum membro do grupo fizer uma imagem mais adequada do gráfico insira aqui -->
                 </div>
             </div>
+
         <!-- Container com informações relacionadas ao gráfico -->
             <div class="container_grafinfo py-5 bg-light"> <!-- 'bg-light' ta sendo usado só pra mostrar o tamanho dessa div, depois de ajustar pode remover -->
+                
+                <!-- Substituir todo esse conteúdo (colocar uma tabela ou algo do tipo para simular as informações do gráfico, procure tabelas prontas feitas com bootstrap na internet) -->
                 <h2 class="h3 font-weight-bold">Some demo content</h2>
                 <div class="row">
                     <div class="col-lg-10 mb-4">
@@ -23,12 +26,18 @@
                         <p class="font-italic text-muted">Lorem ipsum dolor sit amet, consectetur <strong class="font-weight-bold text-dark">adipisicing elit, sed </strong>do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in <strong class="font-weight-bold text-dark">reprehenderit in voluptate </strong>velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     </div>
                 </div>
+                <!-- Substituir todo esse conteúdo (colocar uma tabela ou algo do tipo para simular as informações do gráfico, procure tabelas prontas feitas com bootstrap na internet) -->
+            
             </div>
     </div>
 </div>
-<!-- Container com a caixa de agua e temperatura -->
+<!-- Container com os cards de agua e temperatura -->
+<!-- Não precisam ser cards, se tiver ideias melhores sinta-se livre de mudar, mas se mudar muito o layout
+recomendo informar o mestre para aprovar o novo design! -->
 <div class="container">
     <div class="row">
+
+        <!-- Coluna do primeiro card da umidade -->
         <div class="col-lg-4 mt-3">
             <div class="card card-margin">
                 <div class="card-header no-border">
@@ -57,13 +66,13 @@
                                 <span>Session timeout increase to 30 minutes</span>
                             </li>
                         </ol>
-                        <div class="widget-49-meeting-action">
-                            <a href="#" class="btn btn-sm btn-flash-border-primary">View All</a>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Coluna do primeiro card da umidade -->
+
+        <!-- Coluna do segundo card da umidade -->
         <div class="col-lg-4 mt-3">
             <div class="card card-margin">
                 <div class="card-header no-border">
@@ -92,13 +101,13 @@
                                 <span>Client request to send invoice</span>
                             </li>
                         </ol>
-                        <div class="widget-49-meeting-action">
-                            <a href="#" class="btn btn-sm btn-flash-border-warning">View All</a>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Coluna do segundo card da umidade -->
+
+        <!-- Coluna do card da temperatura -->
         <div class="col-lg-4 mt-3">
             <div class="card card-margin">
                 <div class="card-header no-border">
@@ -127,13 +136,12 @@
                                 <span>Received approval to start wire-frame</span>
                             </li>
                         </ol>
-                        <div class="widget-49-meeting-action">
-                            <a href="#" class="btn btn-sm btn-flash-border-success">View All</a>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Coluna do card da temperatura -->
+
     </div>
 </div>
 {% endblock %}
