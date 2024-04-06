@@ -14,3 +14,27 @@
         display: none;
     }
 }
+
+
+/* centraliza todos os títulos que estão usando h1 */
+h1{
+    display: flex;
+    place-content: center;
+    font-size: clamp(2rem,4vw+1rem,5.5rem);
+    width: 100%;
+    margin-top: 10%;
+    text-align: center;
+}
+
+@media (max-width: 426px){
+    h1{
+        font-size: 4vw;
+    }
+
+}
+
+.txt-container-color{
+    background-color: rgb(163, 180, 143);
+     border-radius: 10px; /* arredonda as bordas */
+    
+}
