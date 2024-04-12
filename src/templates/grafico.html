@@ -4,4 +4,169 @@
 
 {% block content %}
 
+<!-- BUTTONs PARA MUDAR O GRAFICO -->
+<div class="container">
+    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+        <div class="btn-group me-2" role="group" aria-label="First group">
+            <button type="button" class="btn btn-primary" onclick="mudarImagem('../static/images/grafico_Index.jpg')">Média do ambiente</button>
+            <button type="button" class="btn btn-primary" onclick="mudarImagem('../static/images/temperatura.jpeg')">Temperatura do ambiente</button>
+            <button type="button" class="btn btn-primary" onclick="mudarImagem('../static/images/umidade_amb.jpeg')">Umidade do ambiente</button>
+            <button type="button" class="btn btn-primary" onclick="mudarImagem('../static/images/umidade_solo.jpeg')">Umidade do solo</button>
+        </div>
+    </div> 
+    <div>
+        <img id="imagem" src="../static/images/grafico_Index.jpg" class="img-fluid" alt="media">
+    </div>
+    <div class="mt-3">
+        <h2>Dados detalhados:</h2>
+         <div class="row">
+            <!-- Tabela que mostra a média a partir de uma amostra de dados(média de hoje, dos últimos 7 dias etc.).-->
+                <table border="1" class="col table table-dark">
+                    <thead>
+                        <tr>
+                            <th>Período</th>
+                            <th>Média(°C)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Hoje</td>
+                            <td>xx,x°C</td>
+                        </tr>
+                        <tr>
+                            <td>semana</td>
+                            <td>xx,x°C</td>
+                        </tr>
+                        <tr>
+                            <td>mês</td>
+                            <td>xx,x°C</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- Tabela para explicitar amostras com valores altos e baixos -->
+                <table border="1" class="col table table-dark">
+                    <thead>
+                        <tr>
+                            <th>Tipo</th>
+                            <th>Valor(°C)</th>
+                            <th>Hora</th>
+                            <th>data</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Maior temperatura</td>
+                            <td>xx,x°C</td>
+                            <td>XXXX</td>
+                            <td>XXXX</td>
+                        </tr>
+                        <tr>
+                            <td>Menor temperatura</td>
+                            <td>xx,x°C</td>
+                            <td>XXXX</td>
+                            <td>XXXX</td>
+                        </tr>
+                    </tbody>
+                </table>
+        </div>
+        <div id="tabela-temperatura" style="display: none;">
+            <table class="table table-bordered table-dark">
+                <thead>
+                    <tr>
+                        <th>Coluna 1</th>
+                        <th>Coluna 2</th>
+                        <th>Coluna 3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Dado 1</td>
+                        <td>Dado 2</td>
+                        <td>Dado 3</td>
+                    </tr>
+                    <tr>
+                        <td>Dado 4</td>
+                        <td>Dado 5</td>
+                        <td>Dado 6</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="tabela-umidade-amb" style="display: none;">
+            <table class="table table-bordered table-dark">
+                <thead>
+                    <tr>
+                        <th>Coluna 1</th>
+                        <th>Coluna 2</th>
+                        <th>Coluna 3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Dado 1</td>
+                        <td>Dado 2</td>
+                        <td>Dado 3</td>
+                    </tr>
+                    <tr>
+                        <td>Dado 4</td>
+                        <td>Dado 5</td>
+                        <td>Dado 6</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="tabela-umidade-solo" style="display: none;">
+            <table class="table table-bordered table-dark">
+                <thead>
+                    <tr>
+                        <th>Coluna 1</th>
+                        <th>Coluna 2</th>
+                        <th>Coluna 3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Dado 1</td>
+                        <td>Dado 2</td>
+                        <td>Dado 3</td>
+                    </tr>
+                    <tr>
+                        <td>Dado 4</td>
+                        <td>Dado 5</td>
+                        <td>Dado 6</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    function mudarImagem(caminho) {
+        document.getElementById('imagem').src = caminho;
+        // Mostra a tabela correspondente e oculta as outras
+        if (caminho.includes('grafico_Index.jpg')) {
+            document.getElementById('tabela-media').style.display = 'block';
+            document.getElementById('tabela-temperatura').style.display = 'none';
+            document.getElementById('tabela-umidade-amb').style.display = 'none';
+            document.getElementById('tabela-umidade-solo').style.display = 'none';
+        } else if (caminho.includes('temperatura.jpeg')) {
+            document.getElementById('tabela-media').style.display = 'none';
+            document.getElementById('tabela-temperatura').style.display = 'block';
+            document.getElementById('tabela-umidade-amb').style.display = 'none';
+            document.getElementById('tabela-umidade-solo').style.display = 'none';
+        } else if (caminho.includes('umidade_amb.jpeg')) {
+            document.getElementById('tabela-media').style.display = 'none';
+            document.getElementById('tabela-temperatura').style.display = 'none';
+            document.getElementById('tabela-umidade-amb').style.display = 'block';
+            document.getElementById('tabela-umidade-solo').style.display = 'none';
+        } else if (caminho.includes('umidade_solo.jpeg')) {
+            document.getElementById('tabela-media').style.display = 'none';
+            document.getElementById('tabela-temperatura').style.display = 'none';
+            document.getElementById('tabela-umidade-amb').style.display = 'none';
+            document.getElementById('tabela-umidade-solo').style.display = 'block';
+        }
+    }
+</script>
+ 
 {% endblock %}
