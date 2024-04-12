@@ -3,112 +3,39 @@
 {% block title %}<title>Home</title>{% endblock %}
 
 {% block content %}
-<div class="container" data-target="collapseMenu">
-    <!-- Row do Gráfico (só com uma imagem por agora) junto com informações detalhadas em baixo -->
-    <div class="row align-items-start">
-            
-         <!-- 'bg-light' ta sendo usado só pra mostrar o tamanho dessa div, depois de ajustar pode remover -->
-         <!--removi 'bg-light'-->
-                
-                <div class="resize_grafico_home">
-                    <img src="../static/images/grafico_Index.jpg" alt="grafico" class="img-fluid rounded"> <!-- Se encontrar ou algum membro do grupo fizer uma imagem mais adequada do gráfico insira aqui -->   
-                </div>
-            </div>
 
-                 <!--IMAGEM ATUALIZADA GRAFICO-->
-
-        <!-- Container com informações relacionadas ao gráfico -->
-            <!-- 'bg-light' ta sendo usado só pra mostrar o tamanho dessa div, depois de ajustar pode remover -->
-
-               <!--removi 'bg-light'-->
-
-                <!-- Substituir todo esse conteúdo (colocar uma tabela ou algo do tipo para simular as informações do gráfico, procure tabelas prontas feitas com bootstrap na internet) -->
-                <!-- tabela com informações do grafico adicionada  -->
-                <table class="table table-dark">
-                    <thead>
-                      <tr>
-                        <th scope="col">Horas</th>
-                        <th scope="col">Umidade do Solo</th>
-                        <th scope="col">Umidade do Ambiente</th>
-                        <th scope="col">Media de Temperatura</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">00:00</th>
-                        <td>%</td>
-                        <td>%</td>
-                        <td>%</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">06:00</th>
-                        <td>%</td>
-                        <td>%</td>
-                        <td>%</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">12:00</th>
-                        <td>%</td>
-                        <td>%</td>
-                        <td>%</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <!-- foi adicionada tabela com informações do grafico -->
-
-
-                <!-- Substituir todo esse conteúdo (colocar uma tabela ou algo do tipo para simular as informações do gráfico, procure tabelas prontas feitas com bootstrap na internet) -->
-            
-            </div>
-    </div>
+<div class="d-flex flex-column align-items-center">
+<img src="../static/images/logo.png" style="max-width: 30%;">
 </div>
-<!-- Container com os cards de agua e temperatura -->
-<!-- Não precisam ser cards, se tiver ideias melhores sinta-se livre de mudar, mas se mudar muito o layout
-recomendo informar o mestre para aprovar o novo design! -->
-<div class="container">
-        <!-- Coluna do primeiro card da umidade -->
-        <div class="row Row">
-            <div class="col-md-4 mb-3">  
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Umidade</h5>
-                        <p class="card-text">Descrição da umidade atual do solo</p>
-                        <a href="/agua" class="btn btn-primary">Ir para o gráfico</a> 
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-4 mb-3"> 
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Temperatura</h5>
-                        <p class="card-text">Descrição da temperatura do ambiente</p>
-                        <a href="/temp" class="btn btn-primary">Ir para o gráfico</a>  
-                    </div>
-                </div>
-            </div>
-        
-            <div class="col-md-4 mb-3">  
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Gráfico</h5>
-                        <p class="card-text">Descrição dos gráficos com mais detalhes</p>
-                        
-                        <a href="/chart" class="btn btn-primary">Ir para o gráfico</a>  
-                    </div>
-                </div>
-            </div>
-        </div>        
 
-        </div>
-        
-        <!-- REMOVIDO CARDS ATERIORES -->
+<h1 class="h1-index">GreenTech</h1>        
 
-        <!-- adicionado tres cards de modelo diferente e foi removido os cards anteriores-->
-        <!-- Coluna do primeiro card da umidade -->
-        <!-- Coluna do segundo card da umidade -->
-        <!-- Coluna do card da temperatura -->
 
-        <!-- REMOVIDO CARDS ATERIORES -->
+  
+  <p class="container-fluid txt-container-color container-index-text">O site oferece uma plataforma intuitiva para análise de dados de estufas indoor. Com uma interface simples e amigável, os usuários podem fazer o upload de arquivos CSV contendo informações sobre suas estufas indoor. Em seguida, o site processa esses dados e gera visualizações gráficas detalhadas.
+
+  Desenvolvido pelo grupo Greentech, o site prioriza a acessibilidade e a facilidade de uso, tornando a análise de dados de estufas uma tarefa descomplicada.
+  
+  Com uma variedade de gráficos disponíveis, o site permite que os usuários compreendam melhor o ambiente de suas estufas e tomem decisões baseadas na análise de dados para otimizar o crescimento de suas plantas.
+  
+  Se você está buscando maximizar o potencial de sua estufa indoor, o site Greentech é a ferramenta ideal para explorar e interpretar seus dados de forma eficiente e eficaz.</p>
+
+<h2 style=" color: rgb(86, 105, 64)">Intruções</h2>
+
+<div class="container-fluid txt-container-color container-index-text ">
+  <ul  >
+  
+    <li>#####</li>
+    <li>#####</li>
+    <li>#####</li>
+    <li>#####</li>
+  
+
+  </ul>
+
+</div>
+
+  
+
 
 {% endblock %}
