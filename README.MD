@@ -38,11 +38,13 @@
 
 ### Gabriel Lourenço
 
-- Linkedin: https://www.linkedin.com/in/gabriel-louren%C3%A7o-676688117?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app
+- Linkedin: https://www.linkedin.com/in/gabriel-lourenço-676688117/
 
 - Github: https://github.com/GabrielMulp
 
 ### Thiago Silva 
+
+- Linkedin: https://www.linkedin.com/in/thiago-monteiro-b559162a7/
 
 - Github: https://github.com/thiagoms14 
 
