@@ -1,7 +1,7 @@
 <img src="./mgt/bannerGT.jpg">
 
 <br>
-<a href="#objetivo">Objetivo</a> | <a href="#visao">Visão</a> | <a href="#metodologia">Metodologia</a> | <a href="tecnologias">Tecnologias</a> | <a href="#mvp">MVP</a> | <a href="#como_utilizar">Como utilizar</a> | <a href="#equipe">Equipe</a>
+<a href="#objetivo">Objetivo</a> | <a href="#visao">Visão</a> | <a href="#metodologia">Metodologia</a> | <a href="#tecnologias">Tecnologias</a> | <a href="#mvp">MVP</a> | <a href="#como_utilizar">Como utilizar</a> | <a href="#equipe">Equipe</a>
 
 <h2 align=center id="objetivo">🎯Objetivo do Projeto</h2>
 
