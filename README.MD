@@ -70,28 +70,28 @@ No desenvolvimento do produto, seguimos a abordagem ágil do Scrum, um método c
         <th> Git Hub </th>
     </tr>
     <tr>
-        <td><img src="./mgt/pfp/fabio.png" alt="ft de perfil" height="32px" width="32px"> </td>
+        <td><img src="./mgt/pfp/fabio.png" alt="ft de perfil" height="40px" width="40px"> </td>
         <td> Scrum Master </td>
         <td> Fábio Hiroshi </td>
         <td> <a href=" https://www.linkedin.com/in/f%C3%A1bio-hiroshi-5393a51a0"> <img src='https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&color=1AB85C'/> </a> </td>
         <td> <a href=" https://github.com/FabioHiros"> <img src='https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white&color=1AB85C'/> </a> </td>
     </tr>
     <tr>
-        <td> <img src="./mgt/pfp/alexandre.jpeg" alt="ft de perfil" height="32px" width="32px"> </td>
+        <td> <img src="./mgt/pfp/alexandre.jpeg" alt="ft de perfil" height="40px" width="40px"> </td>
         <td> Product Owner </td>
         <td> Alexandre Ribeiro </td>
         <td> <a href=" https://www.linkedin.com/in/alexandre-ribeiro-b3b931111/"> <img src='https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&color=1AB85C'/> </a> </td>
         <td> <a href="https://github.com/AlexandreFatec"> <img src='https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white&color=1AB85C'/> </a> </td>
     </tr>
     <tr>
-        <td> <img src="./mgt/pfp/kat.jpg" alt="ft de perfil" height="32px" width="32px"> </td>
+        <td> <img src="./mgt/pfp/kat.jpg" alt="ft de perfil" height="40px" width="40px"> </td>
         <td> Scrum Team </td>
         <td> kathellyn Santos </td>
         <td> <a href="https://www.linkedin.com/in/kathellyn-caroline-a562101b9/"> <img src='https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&color=1AB85C'/> </a> </td>
         <td> <a href="https://github.com/CarolineKathellyn"> <img src='https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white&color=1AB85C'/> </a> </td>
     </tr>
     <tr>
-            <td> <img src="./mgt/pfp/eric.jpeg" alt="ft de perfil" height="32px" width="32px"> </td>
+            <td> <img src="./mgt/pfp/eric.jpeg" alt="ft de perfil" height="40px" width="40px"> </td>
         <td> Scrum Team </td>
         <td> Eric Kawata </td>
         <td> <a href=" http://www.linkedin.com/in/eric-kawata-99678b302
@@ -99,21 +99,21 @@ No desenvolvimento do produto, seguimos a abordagem ágil do Scrum, um método c
         <td> <a href=" https://github.com/ericFatec"> <img src='https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white&color=1AB85C'/> </a> </td>
     </tr>
     <tr>
-        <td> <img src="./mgt/pfp/bianca.jpeg" alt="ft de perfil" height="32px" width="32px"> </td>
+        <td> <img src="./mgt/pfp/bianca.jpeg" alt="ft de perfil" height="40px" width="40px"> </td>
         <td> Scrum Team </td>
         <td> Bianca Isabela </td>
         <td> <a href="https://www.linkedin.com/in/bianca-isabela-souza-vasques-31a8b1284/"> <img src='https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&color=1AB85C'/> </a> </td>
         <td> <a href="https://github.com/IzyBellah"> <img src='https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white&color=1AB85C'/> </a> </td>
     </tr>
     <tr>
-        <td> <img src="./mgt/pfp/gabriel.jpeg" alt="ft de perfil" height="32px" width="32px"> </td>
+        <td> <img src="./mgt/pfp/gabriel.jpeg" alt="ft de perfil" height="40px" width="40px"> </td>
         <td> Scrum Team </td>
         <td> Gabriel Lourenço </td>
         <td> <a href="https://www.linkedin.com/in/gabriel-lourenço-676688117/"> <img src='https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&color=1AB85C'/> </a> </td>
         <td> <a href="https://github.com/GabrielMulp"> <img src='https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white&color=1AB85C'/> </a> </td>
     </tr>
     <tr>
-        <td> <img src="./mgt/pfp/tiago.jpeg" alt="ft de perfil" height="32px" width="32px"> </td>
+        <td> <img src="./mgt/pfp/tiago.jpeg" alt="ft de perfil" height="40px" width="40px"> </td>
         <td> Scrum Team </td>
         <td> Thiago Silva </td>
         <td> <a href="https://www.linkedin.com/in/thiago-monteiro-b559162a7/"> <img src='https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&color=1AB85C'/> </a> </td>
