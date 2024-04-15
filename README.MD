@@ -142,4 +142,3 @@ https://github.com/FabioHiros/API-GreenTECH/assets/144804717/87000834-bb4b-43c3-
     </tr>
 </table>
 
-https://youtu.be/195fkY9Y9yI
