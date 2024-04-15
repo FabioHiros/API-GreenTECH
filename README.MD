@@ -2,7 +2,7 @@
 
 <br>
 <p align=center>
-<a href="#objetivo">Objetivo</a> | <a href="#visao">Visão</a> | <a href="#metodologia">Metodologia</a> | <a href="#tecnologias">Tecnologias</a> | <a href="#mvp">MVP</a> | <a href="#como_utilizar">Como utilizar</a> | <a href="#equipe">Equipe</a>
+<a href="#objetivo">Objetivo</a> | <a href="#visao">Visão</a> | <a href="#metodologia">Metodologia</a> | <a href="#tecnologias">Tecnologias</a> | <a href="#mvp">MVP</a> | <a href="#como_utilizar">Como utilizar</a> | <a href="#equipe">Equipe</a> | <a     href="#cronograma">Cronograma</a>  
 </p>
 <h2 align=center id="objetivo">🎯Objetivo do Projeto</h2>
 
@@ -57,6 +57,24 @@ No desenvolvimento do produto, seguimos a abordagem ágil do Scrum, um método c
     copie o ip que aparece para o navegador
 
 </ol>
+
+<br><br>
+
+<h2 id='cronograma'>Cronograma de entregas<h2>
+
+
+| Item                                                     | Data de Entrega | Grau de Prioridade  | ID |
+|----------------------------------------------------------|-----------------|---------------------|----|
+| Backlog                                                  | 29/03           | 100               | 01 |
+| Wireframe                                                | 01/04           | 95                | 02 |
+| Menu Base                                        | 04/04           | 85               | 03 |
+| Landing Page                                     | 13/04           | 80               | 04 |
+| Página dos Gráficos                                        | 12/04           | 75                | 05 |
+| Página de Upload                                   | 14/04           | 70               | 06 |
+| Implementação do flask                                 | 09/04           | 65                | 07 |
+| Readme                                   | 14/04           | 60               | 08 |
+| Obtenção dos dados                                 | 28/03           | 20                | 09 |
+
 
 <!-- <h2 align=center>🗄Product Backlog</h2> -->
 <!-- Sprint Backlog -->
