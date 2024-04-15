@@ -40,9 +40,6 @@ No desenvolvimento do produto, seguimos a abordagem ágil do Scrum, um método c
 </p>
 
 <!-- video sprint 1 -->
-<video>
-<source src='./mgt/Videos/sprint1.mp4' type="video/mp4">
-</video>
 
 
 <h2 align=center id="como_utilizar">💻Como utilizar o projeto:</h2>
