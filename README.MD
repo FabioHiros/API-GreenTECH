@@ -140,3 +140,6 @@ No desenvolvimento do produto, seguimos a abordagem ágil do Scrum, um método c
     </tr>
 </table>
 
+<video width='1024' height='768' controls autoplay> 
+    <source src="./mgt/videos/sprint1.mkv" type='video/mp4'>
+</video>
