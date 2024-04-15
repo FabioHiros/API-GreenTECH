@@ -139,7 +139,3 @@ No desenvolvimento do produto, seguimos a abordagem ágil do Scrum, um método c
         <td> <a href="https://github.com/thiagoms14"> <img src='https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white&color=1AB85C'/> </a> </td>
     </tr>
 </table>
-
-<video width='1024' height='768' controls autoplay> 
-    <source src="./mgt/videos/sprint1.mkv" type='video/mp4'>
-</video>
