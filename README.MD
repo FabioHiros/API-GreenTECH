@@ -2,7 +2,7 @@
 
 <br>
 <p align=center>
-<a href="#objetivo">Objetivo</a> | <a href="#visao">Visão</a> | <a href="#metodologia">Metodologia</a> | <a href="#tecnologias">Tecnologias</a> | <a href="#mvp">MVP</a> | <a href="#como_utilizar">Como utilizar</a> | <a href="#cronograma">Cronograma</a> | <a href="#equipe">Equipe</a>
+<a href="#objetivo">Objetivo</a> | <a href="#visao">Visão</a> | <a href="#metodologia">Metodologia</a> | <a href="#tecnologias">Tecnologias</a> | <a href="#mvp">MVP</a> | <a href="#como_utilizar">Como utilizar</a> | <a href="#cronograma">Cronograma</a> | <a href="#equipe">Equipe</a>  | <a href="#backlog">Backlog</a>
 </p>
 <h2 align=center id="objetivo">🎯Objetivo do Projeto</h2>
 
@@ -81,22 +81,22 @@ https://github.com/FabioHiros/API-GreenTECH/assets/144804717/87000834-bb4b-43c3-
 <BR>
 <br>
 
-<h2 align=center>🗄 Backlog</h2>
+<h2 align=center id="backlog">🗄 Backlog</h2>
 
 | Item | Prioridade | ID | Descrição | Sprint|
 | ---- | ---------- | -- | --------- | ----- |
 | Criação da Estrutura do Software | 100 |#1| "Como Cliente quero ter maior visualização da Estrutura do software" | **1** |
 | Desenvolvimento da Pagina de Layout | 95 |#2| "Como cliente quero ter visualização de três cards de direcionamento intuitivos " | **1** |
-|Desenvolvimento da Interface Intuitiva  | 85 |#4| "Enquanto cliente quero uma interface pratica e de facil uso" | **1**|
-| Tabela  de Variaveis | 75 |#5| "Enquanto cliente quero uma tabela de acordo com resultado dos dados"| **1** |
-| Graficos Ilustrativos | 70 |#6| "Eu como cliente quero, encontrar no site, exemplos práticos para que o método seja aplicado para meus funcionários de forma padronizada". | **1** |
-| Implementação para Upload | 65 |#7| "Enquanto cliente quero uma solução para realizar upload de dados" | **2** |
-| Implementação de Dados  | 60 |#8| "Enquanto Cliente quero que os dados sejam implementados em tempo real" | **2**|
-| Implementação de suporte  | 55 |#9| "Enquanto cliente quero um suporte para os dados"| **3** |
-| Melhorias de Desempenho Funcional | 50 |#10| "Enquanto cliente quero melhor desempenho funcional". | **3** |
-| Leitura temporal de dados  | 45 |#11| "Enquanto cliente quero leitura por hora dos dados". | **3** |
-| Responsividade  | 40 |#12| "Enquanto cliente quero que a pagina suporte, website e mobile" | **3** |
-| README | 35 |#10| Documentação do projeto. | **4** |
+|Desenvolvimento da Interface Intuitiva  | 85 |#3| "Enquanto cliente quero uma interface pratica e de facil uso" | **1**|
+| Tabela  de Variaveis | 75 |#4| "Enquanto cliente quero uma tabela de acordo com resultado dos dados"| **1** |
+| Graficos Ilustrativos | 70 |#5| "Eu como cliente quero, encontrar no site, exemplos práticos para que o método seja aplicado para meus funcionários de forma padronizada". | **1** |
+| Implementação para Upload | 65 |#6| "Enquanto cliente quero uma solução para realizar upload de dados" | **2** |
+| Implementação de Dados  | 60 |#7| "Enquanto Cliente quero que os dados sejam implementados em tempo real" | **2**|
+| Implementação de suporte  | 55 |#8| "Enquanto cliente quero um suporte para os dados"| **3** |
+| Melhorias de Desempenho Funcional | 50 |#9| "Enquanto cliente quero melhor desempenho funcional". | **3** |
+| Leitura temporal de dados  | 45 |#10| "Enquanto cliente quero leitura por hora dos dados". | **3** |
+| Responsividade  | 40 |#11| "Enquanto cliente quero que a pagina suporte, website e mobile" | **3** |
+| README | 35 |#12| Documentação do projeto. | **4** |
 
 
 <!--  -->
@@ -116,14 +116,14 @@ https://github.com/FabioHiros/API-GreenTECH/assets/144804717/87000834-bb4b-43c3-
         <td><img src="./mgt/pfp/fabio.png" alt="ft de perfil" height="40px" width="40px"> </td>
         <td> Scrum Master </td>
         <td> Fábio Hiroshi </td>
-        <td> <a href=" https://www.linkedin.com/in/f%C3%A1bio-hiroshi-5393a51a0"> <img src='https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&color=1AB85C'/> </a> </td>
-        <td> <a href=" https://github.com/FabioHiros"> <img src='https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white&color=1AB85C'/> </a> </td>
+        <td> <a href="https://www.linkedin.com/in/f%C3%A1bio-hiroshi-5393a51a0"> <img src='https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&color=1AB85C'/> </a> </td>
+        <td> <a href="https://github.com/FabioHiros"> <img src='https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white&color=1AB85C'/> </a> </td>
     </tr>
     <tr>
         <td> <img src="./mgt/pfp/alexandre.jpeg" alt="ft de perfil" height="40px" width="40px"> </td>
         <td> Product Owner </td>
         <td> Alexandre Ribeiro </td>
-        <td> <a href=" https://www.linkedin.com/in/alexandre-ribeiro-b3b931111/"> <img src='https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&color=1AB85C'/> </a> </td>
+        <td> <a href="https://www.linkedin.com/in/alexandre-ribeiro-b3b931111/"> <img src='https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&color=1AB85C'/> </a> </td>
         <td> <a href="https://github.com/AlexandreFatec"> <img src='https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white&color=1AB85C'/> </a> </td>
     </tr>
     <tr>
@@ -137,9 +137,9 @@ https://github.com/FabioHiros/API-GreenTECH/assets/144804717/87000834-bb4b-43c3-
             <td> <img src="./mgt/pfp/eric.jpeg" alt="ft de perfil" height="40px" width="40px"> </td>
         <td> Scrum Team </td>
         <td> Eric Kawata </td>
-        <td> <a href=" http://www.linkedin.com/in/eric-kawata-99678b302
+        <td> <a href="http://www.linkedin.com/in/eric-kawata-99678b302
         "> <img src='https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&color=1AB85C'/> </a> </td>
-        <td> <a href=" https://github.com/ericFatec"> <img src='https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white&color=1AB85C'/> </a> </td>
+        <td> <a href="https://github.com/ericFatec"> <img src='https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white&color=1AB85C'/> </a> </td>
     </tr>
     <tr>
         <td> <img src="./mgt/pfp/bianca.jpeg" alt="ft de perfil" height="40px" width="40px"> </td>
