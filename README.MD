@@ -78,9 +78,30 @@ https://github.com/FabioHiros/API-GreenTECH/assets/144804717/87000834-bb4b-43c3-
 | Readme                                   | 14/04           | 60               | 08 |
 | Obtenção dos dados                                 | 28/03           | 20                | 09 |
 
+<BR>
+<br>
 
-<!-- <h2 align=center>🗄Product Backlog</h2> -->
-<!-- Sprint Backlog -->
+<h2 align=center>🗄 Backlog</h2>
+
+| Item | Prioridade | ID | Descrição | Sprint|
+| ---- | ---------- | -- | --------- | ----- |
+| Criação da Estrutura do Software | 100 |#1| "Como Cliente quero ter maior visualização da Estrutura do software" | **1** |
+| Desenvolvimento da Pagina de Layout | 95 |#2| "Como cliente quero ter visualização de três cards de direcionamento intuitivos " | **1** |
+|Desenvolvimento da Interface Intuitiva  | 85 |#4| "Enquanto cliente quero uma interface pratica e de facil uso" | **1**|
+| Tabela  de Variaveis | 75 |#5| "Enquanto cliente quero uma tabela de acordo com resultado dos dados"| **1** |
+| Graficos Ilustrativos | 70 |#6| "Eu como cliente quero, encontrar no site, exemplos práticos para que o método seja aplicado para meus funcionários de forma padronizada". | **1** |
+| Implementação para Upload | 65 |#7| "Enquanto cliente quero uma solução para realizar upload de dados" | **2** |
+| Implementação de Dados  | 60 |#8| "Enquanto Cliente quero que os dados sejam implementados em tempo real" | **2**|
+| Implementação de suporte  | 55 |#9| "Enquanto cliente quero um suporte para os dados"| **3** |
+| Melhorias de Desempenho Funcional | 50 |#10| "Enquanto cliente quero melhor desempenho funcional". | **3** |
+| Leitura temporal de dados  | 45 |#11| "Enquanto cliente quero leitura por hora dos dados". | **3** |
+| Responsividade  | 40 |#12| "Enquanto cliente quero que a pagina suporte, website e mobile" | **3** |
+| README | 35 |#10| Documentação do projeto. | **4** |
+
+
+<!--  -->
+
+<br><br>
 
 <h2 id="equipe"> Equipe: </h2>
 <table>
