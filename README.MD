@@ -89,15 +89,15 @@ https://github.com/FabioHiros/API-GreenTECH/assets/144804717/87000834-bb4b-43c3-
 | Desenvolvimento da Pagina de Layout | 95 |#2| "Como cliente quero ter visualização de três cards de direcionamento intuitivos " | **1** |
 |Desenvolvimento da Interface Intuitiva  | 85 |#3| "Enquanto cliente quero uma interface pratica e de facil uso" | **1**|
 | Flask | 75 |#4| ""Criação do backend da pagina""| **1** |
-| Tabela  de Variaveis | 70 |#4| "Enquanto cliente quero uma tabela de acordo com resultado dos dados"| **1** |
-| Graficos Ilustrativos | 65 |#5| "Eu como cliente quero, encontrar no site, exemplos práticos para que o método seja aplicado para meus funcionários de forma padronizada". | **1** |
-| Implementação para Upload | 60 |#6| "Enquanto cliente quero uma solução para realizar upload de dados" | **2** |
-| Implementação de Dados  | 55 |#7| "Enquanto Cliente quero que os dados sejam implementados em tempo real" | **2**|
-| Implementação de suporte  | 50 |#8| "Enquanto cliente quero um suporte para os dados"| **3** |
-| Melhorias de Desempenho Funcional | 45 |#9| "Enquanto cliente quero melhor desempenho funcional". | **3** |
-| Leitura temporal de dados  | 40 |#10| "Enquanto cliente quero leitura por hora dos dados". | **3** |
-| Responsividade  | 35 |#11| "Enquanto cliente quero que a pagina suporte, website e mobile" | **3** |
-| README | 30 |#12| Documentação do projeto. | **4** |
+| Tabela  de Variaveis | 70 |#5| "Enquanto cliente quero uma tabela de acordo com resultado dos dados"| **1** |
+| Graficos Ilustrativos | 65 |#6| "Eu como cliente quero, encontrar no site, exemplos práticos para que o método seja aplicado para meus funcionários de forma padronizada". | **1** |
+| Implementação para Upload | 60 |#7| "Enquanto cliente quero uma solução para realizar upload de dados" | **2** |
+| Implementação de Dados  | 55 |#8| "Enquanto Cliente quero que os dados sejam implementados em tempo real" | **2**|
+| Implementação de suporte  | 50 |#9| "Enquanto cliente quero um suporte para os dados"| **3** |
+| Melhorias de Desempenho Funcional | 45 |#10| "Enquanto cliente quero melhor desempenho funcional". | **3** |
+| Leitura temporal de dados  | 40 |#11| "Enquanto cliente quero leitura por hora dos dados". | **3** |
+| Responsividade  | 35 |#12| "Enquanto cliente quero que a pagina suporte, website e mobile" | **3** |
+| README | 30 |#13| Documentação do projeto. | **4** |
 
 
 <!--  -->
