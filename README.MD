@@ -68,17 +68,15 @@ https://github.com/FabioHiros/API-GreenTECH/assets/144804717/87000834-bb4b-43c3-
 
 | Item                                                     | Data de Entrega | Grau de Prioridade  | ID |
 |----------------------------------------------------------|-----------------|---------------------|----|
-| Backlog                                                  | 29/03           | 100               | 01 |
-| Wireframe                                                | 01/04           | 95                | 02 |
-| Menu Base                                         | 04/04           | 85               | 03 |
-| Landing Page                                     | 13/04           | 80               | 04 |
-| Página dos Gráficos                                        | 12/04           | 75                | 05 |
-|  Gráficos ilustrativos                                        | 12/04           | 70                | 06 |
-| Tabela de variaveis                                        | 12/04           | 65                | 07 |
-| Botão para Upload                                   | 14/04           | 60               | 08 |
-| Implementação do flask                                 | 09/04           | 55                | 09 |
-| Readme                                   | 14/04           | 50               | 10 |
-| Obtenção dos dados                                 | 28/03           | 40                | 11 |
+| Wireframe                                                | 01/04           | 100                | 01 |
+| Menu Base                                         | 04/04           | 95               | 02 |
+| Landing Page                                     | 13/04           | 90               | 03 |
+| Página dos Gráficos                                        | 12/04           | 85                | 04 |
+|  Gráficos ilustrativos                                        | 12/04           | 80                | 05 |
+| Implementação do flask                                 | 07/04           | 75                | 06 |
+| Tabela de variaveis                                        | 06/04           | 70                | 07 |
+| Readme  básico                                 | 14/04           | 50               | 08 |
+| Obtenção dos dados                                 | 28/03           | 40                |09 |
 
 <BR>
 <br>
@@ -91,16 +89,16 @@ https://github.com/FabioHiros/API-GreenTECH/assets/144804717/87000834-bb4b-43c3-
 |Desenvolvimento do menu base  | 95 |#2| "Como cliente quero ter visualização de três cards de direcionamento intuitivos " | **1**|
 | Desenvolvimento da landing page | 90 |#3| "Enquanto cliente quero uma interface pratica e de facil uso " | **1** |
 | Desenvolvimento da página para os gráficos | 85 |#4| "Como cliente quero ter visualização dos gráficos gerados" | **1** |
-| Flask | 75 |#5| "Criação do backend da pagina"| **1** |
-| Tabela  de Variaveis | 70 |#6| "Enquanto cliente quero uma tabela de acordo com resultado dos dados"| **1** |
-| Graficos Ilustrativos | 65 |#7| "Eu como cliente quero, encontrar no site, exemplos práticos para que o método seja aplicado para meus funcionários de forma padronizada". | **1** |
+| Graficos Ilustrativos | 80 |#5| "Eu como cliente quero, encontrar no site, exemplos práticos para que o método seja aplicado para meus funcionários de forma padronizada". | **1** |
+| Flask | 75 |#6| "Criação do backend da pagina"| **1** |
+| Tabela  de Variaveis | 70 |#7| "Enquanto cliente quero uma tabela de acordo com resultado dos dados"| **1** |
 | Implementação para Upload | 60 |#8| "Enquanto cliente quero uma solução para realizar upload de dados" | **2** |
-| Implementação de Dados  | 55 |#9| "Enquanto Cliente quero que os dados sejam implementados em tempo real" | **2**|
-| Implementação de suporte  | 50 |#10| "Enquanto cliente quero um suporte para os dados"| **3** |
-| Melhorias de Desempenho Funcional | 45 |#11| "Enquanto cliente quero melhor desempenho funcional". | **3** |
-| Leitura temporal de dados  | 40 |#12| "Enquanto cliente quero leitura por hora dos dados". | **3** |
-| Responsividade  | 35 |#13| "Enquanto cliente quero que a pagina suporte, website e mobile" | **3** |
-| README | 30 |#14| Documentação do projeto. | **4** |
+| Implementação de Dados  | 50 |#9| "Enquanto Cliente quero que os dados sejam implementados em tempo real" | **2**|
+| Implementação de suporte  | 45 |#10| "Enquanto cliente quero um suporte para os dados"| **3** |
+| Melhorias de Desempenho Funcional | 40 |#11| "Enquanto cliente quero melhor desempenho funcional". | **3** |
+| Leitura temporal de dados  | 35 |#12| "Enquanto cliente quero leitura por hora dos dados". | **3** |
+| Responsividade  | 30 |#13| "Enquanto cliente quero que a pagina suporte, website e mobile" | **3** |
+| README | 25 |#14| Documentação do projeto. | **4** |
 
 
 <!--  -->
