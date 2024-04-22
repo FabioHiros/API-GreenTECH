@@ -20,21 +20,36 @@ input {
     width: 1.1;
 }
 
-.txt-container-color{
-    background-color: rgb(163, 180, 143);
-     border-radius: 10px; /* arredonda as bordas */
-   
+
+/* RESPONSIVO */
+
+
+/* media para o texto ocupar todo o espaço quando estiver em um celular */
+@media (max-width: 190px) {
+    .row{
+    width: 120%;
+    }
 }
 
-/* centraliza todos os títulos que estão usando h1,h2 */
-h1,h2{
-    display: flex;
-    place-content: center;
-    width: 100%;
-    
-    text-align: center;
-}
+ 
 
+@media (max-width: 18px) {
+    #c-card .col {
+      flex: 0 0 40%;  
+      width: 100%;
+    }
+  }
+
+
+/* media para virar coluna quando estiver em um celular */
+@media (max-width: 500px) {
+    .row.justify-content-around {
+      flex-direction: column;
+    }
+  }
+
+
+  
 @media (max-width: 991.98px) {
     .resize_grafico_home img{
         width: 90vw;
@@ -45,33 +60,117 @@ h1,h2{
 }
 
 
+/* ESTILIZAÇÃO DO INDEX */
 
-/* muda a fonte do h1 no (index) , tamanho , etc */
+
+/* PARTE DO SOBRE GREENTECH */
+
 .h1-index{
-    font-family: "Mukta", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-font-size: 5rem;
-  color: rgb(86, 105, 64) ;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 4rem;
+    color: rgb(86, 105, 64) ;
+    font-weight: bold;
+}
+ 
+.h5{
+    color: rgb(106, 106, 106);
+    text-align: justify;
 }
 
-/* 
-container para o espaço dos textos não tomar todo o espaço */
-.container-index-text{
-    width: 80%;
-}
+ #sobre{
+    display: flex;
+    width: 90%;
+ }
 
+ 
+/* para nao tomar a largura da tela inteira (container do conteudo sobre o site. ) */
 
-/* media para o texto ocupar todo o espaço quando estiver em um celular */
-@media (max-width: 490px) {
-    .container-index-text{
-    width: 100%;
-    }
-}
+  /* button */
 
-/* media para virar coluna quando estiver em um celular */
-@media (max-width: 500px) {
-    .row.justify-content-around {
-      flex-direction: column;
-    }
+  #ir_para{
+    background-color: white;
+    font-weight: bold;
+    border-color: rgb(26, 191, 37);
+    border-radius: 40px;
+
   }
+
+  #ir_para:hover{
+    transition-duration:  0.6s;
+    color: rgb(63, 252, 15);
+    border-color: rgb(2, 255, 18);
+    background-color: white;
+  }
+
+/* ILUSTRAÇÃO */
+
+.figure{
+    margin: none;
+    width: 30%;
+    height: 30%;
+
+}
+
+.figure-img {
+    margin-left: 50%;
+}
+
+
+
+/* CONTAINER DE INSTRUÇÕES DO SITE */
+
+.como{
+    display: flex;
+    place-content: center;
+    color: rgb(255, 132, 0);
+    text-align: center;
+    font-weight: bold;
+    font-size: 4rem;
+}
+
+h2{
+    display: flex;
+    place-content: center;
+    color: rgb(13, 12, 11);
+    text-align: center;
+    font-weight: bold;
+    font-size: 4rem;
+}
+
+.txt-container-color{
+    background-color: rgb(224, 247, 198);
+    border-radius: 30px; /* arredonda as bordas */
+    justify-content: center;
+    margin-top: 5%;
+}
+
+
+/* catões de instrução */
+
+
+#c-card{
+    padding: 50px 0;
+    padding-left: 13%;
+}
+
+ .card{
+    width: 16rem;
+    height: 20rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ }
+ .card:hover{
+    transform: scale(1.2);
+    transition-duration: 0.5s;
+ }
+
+
+ /* imagens do card */
+
+ .card-img-top{
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+    margin-bottom: 4%;
+ }
+
+

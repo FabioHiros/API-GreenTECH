@@ -5,36 +5,82 @@
 {% block content %}
 
 
-<div class="d-flex flex-column align-items-center">
-  <img src="../static/images/logo.png" style="width: 15%;">
+<div class="container-fluid text-start" id="sobre"  >
+  <!-- sobre o site-->
+  <div class="row container-fluid">
+        <div class="col-md-6">
 
-</div>
+          <p class="h1-index">GreenTECH</p>
+          
+          <div class="container-fluid" id="la"><img src="../static/images/laranja.png" width="40%" height="10px"></div>
 
-<h1 class="h1-index">GreenTech</h1>        
+          <br>
+          <p class="h5">
+            O site Greentech simplifica a análise de dados de estufas indoor. Desenvolvido para facilitar o uso, permite aos usuários fazer upload de arquivos CSV e visualizar gráficos detalhados. Com foco na acessibilidade, ajuda a entender e otimizar o ambiente das estufas para um melhor crescimento das plantas. É a ferramenta ideal para explorar e interpretar dados de forma eficiente.</p>
 
-<div class="container ">
-<div class="row justify-content-around d-flex flex-wrap ">
-<div class="col">
+            <br>
+            <a href="#instrução" class="btn btn-info" id="ir_para">Ir para as instruções</a>    <!-- botão que envia para as instruções -->
+        </div>
+
+         <!-- ilustração -->
+         <figure class="figure">
+          <img src="../static/images/floresta.jpg" class="figure-img img-fluid rounded text-end" alt="ilustração" width="100%">
+          <figcaption class="figure-caption"></figcaption>
+      </figure>
+
+  </div>
+  </div>
+   
+
+       
+      
   
-  <p class="container-fluid txt-container-color container-index-text">O site oferece uma plataforma intuitiva para análise de dados de estufas indoor. Com uma interface simples e amigável, os usuários podem fazer o upload de arquivos CSV contendo informações sobre suas estufas indoor. Em seguida, o site processa esses dados e gera visualizações gráficas detalhadas.
+ <!--  instrução -->
+ 
+ <div class="col txt-container-color mx-auto container-fluid" id="instrução">
+  <div class="como">Como usar o site</div>
 
-    Desenvolvido pelo grupo Greentech, o site prioriza a acessibilidade e a facilidade de uso, tornando a análise de dados de estufas uma tarefa descomplicada.
+  <!-- cartoes com instruções do site  -->
+
+  <div class="row container-fluid" id="c-card">
+    <div class="col">
+      <div class="card">
     
-    Com uma variedade de gráficos disponíveis, o site permite que os usuários compreendam melhor o ambiente de suas estufas e tomem decisões baseadas na análise de dados para otimizar o crescimento de suas plantas.
-    
-    Se você está buscando maximizar o potencial de sua estufa indoor, o site Greentech é a ferramenta ideal para explorar e interpretar seus dados de forma eficiente e eficaz.</p>
-  
-</div>
-<div class="col txt-container-color ">
-  <h2 style=" color: rgb(86, 105, 64); padding: 0 auto;">Instruções</h2>
+        <div class="card-body">
+          <h1>1</h1>
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+        <img src="..." class="card-img-top" alt="...">
+      </div>
+    </div>
+    <div class="col">
+      <div class="card" >
+      
+        <div class="card-body">
+          <h1>2</h1>
+          <h5 class="card-title">Visualize gráficos</h5>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+        <img src="../static/images/ico_gra.png" class="card-img-top" alt="icone de grafico">
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
 
-  ##### Lorem ipsum dolor, sit amet consectetur adipisicing elit.<br>
-  ##### Lorem ipsum dolor, sit amet consectetur adipisicing elit.<br>
-  ##### Lorem ipsum dolor, sit amet consectetur adipisicing elit.<br>
-  ##### Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        <div class="card-body">
+          <h1>3</h1>
+          <h5 class="card-title">Faça uploads</h5>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+        </div>
+        <img src="../static/images/envio.png" class="card-img-top" alt="upload">
+      </div>
+    </div>
+  </div>
+
+  <!-- <a href="#sobre" class="btn btn-info">Ir para o inicio</a> -->
 
 </div>
-</div>
-</div>
+ 
 
 {% endblock %}
