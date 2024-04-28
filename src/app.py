@@ -1,54 +1,61 @@
 import pandas as pd
+import plotly.graph_objects as go
 import plotly.express as px
 from dash import dcc, html, Dash
 from flask import Flask, render_template
 
  
-server = Flask(__name__)
+app = Flask(__name__)
 
- 
-app = Dash(__name__, server=server)
 
- 
-df = pd.read_csv('dadosensores_media.csv')  
+dash = Dash(__name__, server=app,url_base_pathname='/grafico/')
 
- 
- 
-df = pd.DataFrame({
-    "media": ["umidade do solo", "umidade do solo", "umidade do solo", "umidade do solo", "umidade do solo",
-              "umidade do ambiente", "umidade do ambiente", "umidade do ambiente", "umidade do ambiente", "umidade do ambiente",
-              "temperatura", "temperatura", "temperatura", "temperatura", "temperatura",
-              "volume da agua", "volume da agua", "volume da agua", "volume da agua", "volume da agua"],
-    "dia": ["segunda", "terça", "quarta", "quinta", "sexta", "segunda", "terça", "quarta", "quinta", "sexta",
-            "segunda", "terça", "quarta", "quinta", "sexta", "segunda", "terça", "quarta", "quinta", "sexta"],
-    "horario": [0, 1, 2, 3, 4, 0, 1, 2, 3, 4, 0, 1, 2, 3, 4, 0, 1, 2, 3, 4],
-    "valor": [10, 20, 30, 25, 35, 15, 25, 20, 30, 35, 20, 22, 24, 26, 28, 50, 55, 60, 65, 70],
-})
+dados=pd.read_csv('dadosensores_media.csv')
+dados['datahora']=pd.to_datetime(dados['data']+' '+dados['hora'])
+dados = dados.drop('dia_semana', axis=1)
+dados = dados.drop('data', axis=1)
+dados = dados.drop('hora', axis=1)
+desired_year = 2023
+desired_month = 10  # For example, September
 
+# Filter the dataset to include only the rows corresponding to the desired year and month
+dados_filtered = dados[(dados['datahora'].dt.year == desired_year) & (dados['datahora'].dt.month == desired_month)]
+
+# Calculate hourly averages
+dados_filtered_hourly = dados_filtered.resample('d', on='datahora').mean().reset_index()
+
+dados=dados_filtered_hourly
  
-fig = px.line(df, x='dia', y='horario', color='media')
+fig = go.Figure(data=[
+    go.Bar(name='Umidade Solo', x=dados['datahora'], y=dados['umidade_solo']),
+    go.Bar(name='Umidade Ambiente', x=dados['datahora'], y=dados['umidade_ambiente']),
+    go.Bar(name='Temperatura', x=dados['datahora'], y=dados['temperatura']),
+    go.Bar(name='Volume de Água', x=dados['datahora'], y=dados['volume_agua'])
+])
+
+# Change the bar mode
+fig.update_layout(title="Data Analysis",
+                  xaxis_title="Data", yaxis_title="Valores", showlegend=True)
 
 # Layout do Dash
-app.layout = html.Div(children=[
-    html.H1(children='Gráfico de média de umidade'),
-    html.Div(children='Média de umidade do solo e do ambiente'),
-    
+dash.layout = html.Div(children=[
     dcc.Graph(
         id='id_media',
-        figure=fig
+        figure=fig,
+        config={'modeBarButtonsToRemove': ['zoom2d', 'pan2d', 'select2d', 'lasso2d', 'zoomIn2d', 'zoomOut2d', 'autoScale2d', 'resetScale2d', 'hoverClosestCartesian', 'hoverCompareCartesian']}
     ),
 ])
 
 # Rotas do Flask
 
-@server.route("/")
+@app.route("/")
 def home():
     return render_template('index.html')
 
-@server.route("/grafico.html")
+@app.route("/grafico")
 def chart():
-    return app.grafico('grafico.html')
-
+    chart_html = fig.to_json()
+    return render_template('grafico.html',chart=chart_html)
 
 if __name__ == "__main__":
-    server.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
