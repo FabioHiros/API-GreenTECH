@@ -5,17 +5,9 @@
 
 {% block content %}
 
-<!-- BUTTONs PARA MUDAR O GRAFICO -->
+<!-- GRAFICO -->
 <div class="container">
-    
+    {{ dash_content | safe }}
+</div>
 
-    
-    <iframe src="/dash/" width="100%" height="900px" frameborder="0"></iframe>
-    <!-- <div>
-        <img id="imagem" src="../static/images/grafico_Index.jpg" class="img-fluid" alt="media">
-    </div> -->
-
-<!-- ///////GRAFICO FUNCIONAL///////// -->
-
-<script src="../static/script.js"></script>
 {% endblock %}

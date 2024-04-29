@@ -1,4 +1,4 @@
-from static.charts.dash_app import app as dash_app
+from dash_app import app as dash_app
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
@@ -19,13 +19,8 @@ def chart() -> str:
     Não recebe entrada de dados
     """
 
-    # if request.method == "POST":
-        # global selected_type
-        # selected_type = str(request.form["tipo"])  
-        # selected_type=request.form['date']
-        # print(f'{(selected_type)}\n'*10)
-
-    return render_template('grafico.html',current_page="chart")
+    dash_content=dash_app.index()
+    return render_template('grafico.html',current_page="chart",dash_content=dash_content)
 
 dash_app.config.suppress_callback_exceptions = True
 dash_app.init_app(app)
