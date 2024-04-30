@@ -2,6 +2,7 @@ from dash import Dash, html, dash_table, dcc, Input, Output
 import plotly.graph_objects as go
 import pandas as pd
 from datetime import date
+import dash_bootstrap_components as dbc
 
 app = Dash(__name__, url_base_pathname="/dash/", meta_tags=[{'name': 'viewport',
                                                              'content': 'width=device-width, initial-scale=1.0, maximun-scale=1.2, minimun-scale=0.5'}])
@@ -89,10 +90,11 @@ app.layout = html.Div([
                 'displaylogo': False
         }
     ),
-    dash_table.DataTable(data=dados.to_dict('records'), page_size=5),
+    html.Div(
+    dash_table.DataTable(data=dados.to_dict('records'), page_size=5 ),id="table-wrap")
     ],style={'width': '100%', 'float': 'right', 'display': 'flex-column'}),
-    html.Div([
-        html.Div([
+    dbc.Row([
+        dbc.Col([
         dcc.Graph(
             id='id_solo',
             figure=fig_solo,
@@ -106,8 +108,8 @@ app.layout = html.Div([
             config={
                     'displayModeBar': False
             }
-        )],style={'width': '50%', 'float': 'left'}),
-        html.Div([
+        )],style={'width': '50%', 'min-width':'22rem'}),
+        dbc.Col([
         dcc.Graph(
             id='id_ambiente',
             figure=fig_ambiente,
@@ -121,9 +123,9 @@ app.layout = html.Div([
             config={
                     'displayModeBar': False
             }
-        )],style={'width': '50%', 'float': 'right'})
+        )],style={'width': '50%', 'min-width':'22rem'})
     ],style={'width': '100%', 'display': 'flex', 'flex-column': 'wrap'})
-])
+],style={'width': '50%', 'min-width':'400px'})
 
 @app.callback(
     [Output('id_main', 'figure'),
