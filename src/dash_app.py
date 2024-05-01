@@ -22,13 +22,14 @@ def create_figures(dados):
     go.Scatter(x=dados['datahora'], y=dados['volume_agua'], mode='lines', name='Volume de Água Line', line=dict(color='navy'), showlegend=False, legendgroup='agua')
     ])
 
-    fig_main.update_layout(title="Data Analysis",
+    fig_main.update_layout(title="",
                     xaxis_title="Data", yaxis_title="Valores", legend=dict(
                     orientation="h", # "h" for horizontal, "v" for vertical
                     yanchor="bottom", # Positioning anchor for the y-axis
                     y=1.02, # Adjust as needed, 1.02 for moving it slightly above the plot
                     xanchor="right", # Positioning anchor for the x-axis
-                    x=1 # Adjust as needed, 1 for moving it to the right of the plot
+                    x=1 ,# Adjust as needed, 1 for moving it to the right of the plot
+                entrywidthmode='fraction'
                 ))
 
     #Figs da esquerda
@@ -88,11 +89,12 @@ app.layout = html.Div([
         figure=fig_main,
         config={
                 'displaylogo': False
+                
         }
     ),
     html.Div(
     dash_table.DataTable(data=dados.to_dict('records'), page_size=5 ),id="table-wrap")
-    ],style={'width': '100%', 'float': 'right', 'display': 'flex-column'}),
+    ],style={'width': '100%'}),
     dbc.Row([
         dbc.Col([
         dcc.Graph(
@@ -124,8 +126,8 @@ app.layout = html.Div([
                     'displayModeBar': False
             }
         )],style={'width': '50%', 'min-width':'22rem'})
-    ],style={'width': '100%', 'display': 'flex', 'flex-column': 'wrap'})
-],style={'width': '50%', 'min-width':'400px'})
+    ],style={'width': '100%'})
+],style={'width': '100%', 'min-width':'400px'})
 
 @app.callback(
     [Output('id_main', 'figure'),
