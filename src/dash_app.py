@@ -2,9 +2,16 @@ from dash import Dash, html, dash_table, dcc, Input, Output
 import plotly.graph_objects as go
 import pandas as pd
 from datetime import date
+import dash_bootstrap_components as dbc
 
 app = Dash(__name__, url_base_pathname="/dash/", meta_tags=[{'name': 'viewport',
                                                              'content': 'width=device-width, initial-scale=1.0, maximun-scale=1.2, minimun-scale=0.5'}])
+
+def load_data():
+    return pd.read_csv('dadosensores_media.csv')
+
+def filter_data(df, start_date, end_date):
+    return df[(df['datahora'] >= start_date) & (df['datahora'] < end_date)]
 
 def create_figures(dados):
     fig_main = go.Figure(data=[
@@ -21,13 +28,14 @@ def create_figures(dados):
     go.Scatter(x=dados['datahora'], y=dados['volume_agua'], mode='lines', name='Volume de Água Line', line=dict(color='navy'), showlegend=False, legendgroup='agua')
     ])
 
-    fig_main.update_layout(title="Data Analysis",
+    fig_main.update_layout(title="",
                     xaxis_title="Data", yaxis_title="Valores", legend=dict(
                     orientation="h", # "h" for horizontal, "v" for vertical
                     yanchor="bottom", # Positioning anchor for the y-axis
                     y=1.02, # Adjust as needed, 1.02 for moving it slightly above the plot
                     xanchor="right", # Positioning anchor for the x-axis
-                    x=1 # Adjust as needed, 1 for moving it to the right of the plot
+                    x=1 ,# Adjust as needed, 1 for moving it to the right of the plot
+                entrywidthmode='fraction'
                 ))
 
     #Figs da esquerda
@@ -58,14 +66,12 @@ def create_figures(dados):
     
     return fig_main, fig_solo, fig_temperatura, fig_ambiente, fig_agua
 
-dados=pd.read_csv('dadosensores_media.csv')
+dados=load_data()
 dados['datahora']=pd.to_datetime(dados['datahora'])
+available_dates = dados['datahora'].dt.date.unique()
 last_7_days_data = dados[dados['datahora'] >= dados['datahora'].max() - pd.DateOffset(days=7)]
 start_date_default = last_7_days_data['datahora'].min().strftime('%Y-%m-%d')
 end_date_default = last_7_days_data['datahora'].max().strftime('%Y-%m-%d')
-
-print(start_date_default)
-print(end_date_default)
 
 fig_main, fig_solo, fig_temperatura, fig_ambiente, fig_agua = create_figures(dados)
 
@@ -74,12 +80,12 @@ app.layout = html.Div([
     html.Div([
     dcc.DatePickerRange(
     id='my-date-picker-range',
-    min_date_allowed=date(2023, 9, 12),
-    max_date_allowed=date(2023, 12, 31),
-    initial_visible_month=date(2023, 9, 12),
-    start_date=start_date_default,
-    end_date=end_date_default,
-    minimum_nights=0
+        min_date_allowed=available_dates.min(),
+        max_date_allowed=available_dates.max(),
+        initial_visible_month=available_dates.max(),
+        start_date=start_date_default,
+        end_date=end_date_default,
+        disabled_days=[date for date in pd.date_range(start=available_dates.min(), end=available_dates.max()) if date.date() not in available_dates]
     ),
     html.Div(id='output-container-date-picker-range'),
     dcc.Graph(
@@ -87,12 +93,14 @@ app.layout = html.Div([
         figure=fig_main,
         config={
                 'displaylogo': False
+                
         }
     ),
-    dash_table.DataTable(data=dados.to_dict('records'), page_size=5),
-    ],style={'width': '100%', 'float': 'right', 'display': 'flex-column'}),
-    html.Div([
-        html.Div([
+    html.Div(
+    dash_table.DataTable(data=dados.to_dict('records'), page_size=5 ),id="table-wrap")
+    ],style={'width': '100%'}),
+    dbc.Row([
+        dbc.Col([
         dcc.Graph(
             id='id_solo',
             figure=fig_solo,
@@ -106,8 +114,8 @@ app.layout = html.Div([
             config={
                     'displayModeBar': False
             }
-        )],style={'width': '50%', 'float': 'left'}),
-        html.Div([
+        )],style={'width': '50%', 'min-width':'22rem'}),
+        dbc.Col([
         dcc.Graph(
             id='id_ambiente',
             figure=fig_ambiente,
@@ -121,9 +129,9 @@ app.layout = html.Div([
             config={
                     'displayModeBar': False
             }
-        )],style={'width': '50%', 'float': 'right'})
-    ],style={'width': '100%', 'display': 'flex', 'flex-column': 'wrap'})
-])
+        )],style={'width': '50%', 'min-width':'22rem'})
+    ],style={'width': '100%'})
+],style={'width': '100%', 'min-width':'400px'})
 
 @app.callback(
     [Output('id_main', 'figure'),
@@ -146,6 +154,3 @@ def update_graph(start_date, end_date):
     fig_main, fig_solo, fig_temperatura, fig_ambiente, fig_agua  = create_figures(dados_filtered)
     
     return fig_main, fig_solo, fig_temperatura, fig_ambiente, fig_agua
-
-def filter_data(df, start_date, end_date):
-    return df[(df['datahora'] >= start_date) & (df['datahora'] < end_date)]

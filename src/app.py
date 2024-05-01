@@ -1,10 +1,27 @@
 from dash_app import app as dash_app
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, make_response, jsonify
+import pandas as pd
+import os
 
 app = Flask(__name__)
 
+app.config['UPLOAD_FOLDER'] = './uploads'
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
+ALLOWED_EXTENSIONS = {'csv'}
+
+@app.errorhandler(413)
+def too_large(e):
+    return make_response(jsonify(message="Arquivo muito grande!"), 413)
+
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+def update_file():
+    new_data=pd.read_csv('./uploads/dadosensores.csv')
+    new_data.to_csv('dadosensores_media.csv', mode='a', header=False, index=False)
+
 # Rotas do Flask
-selected_type=None
 @app.route("/")
 def home() -> str:
     """Carrega a página home e retorna o valor 'home' \n
@@ -24,6 +41,19 @@ def chart() -> str:
 
 dash_app.config.suppress_callback_exceptions = True
 dash_app.init_app(app)
+
+@app.route('/upload', methods=['POST'])
+def upload_file():
+    if 'file' in request.files:
+        file = request.files['file']
+        if file and allowed_file(file.filename):
+            filename = "dadosensores.csv"
+            # Here you should save the file
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            update_file()
+            return jsonify({'message': 'Upload feito com sucesso!'})
+
+    return jsonify({'message': 'Upload falhou!'}), 400
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, debug=True)
