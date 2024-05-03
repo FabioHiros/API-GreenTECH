@@ -50,6 +50,25 @@
   }
 
 
+  /* imagem  */
+
+  @media only screen and (max-width: 768px) {
+    .figure {
+        display: none;
+    }
+}
+
+/* cards */
+@media only screen and (max-width: 768px) {
+    #c-card {
+        display: flex;
+        flex-wrap: wrap;
+        padding-right: 53vw;
+        justify-content: start;
+    }  
+}
+
+
   
 @media (max-width: 991.98px) {
     .resize_grafico_home img{
@@ -109,7 +128,7 @@
     margin: none;
     width: 30%;
     height: 30%;
-
+    
 }
 
 .figure-img {
@@ -119,6 +138,9 @@
 
 
 /* CONTAINER DE INSTRUÇÕES DO SITE */
+
+
+ 
 
 .como{
     display: flex;
@@ -148,16 +170,18 @@ h2{
 
 /* catões de instrução */
 
+ 
 
-#c-card{
-    padding: 50px 0;
-    padding-left: 13%;
+ .col{
+     padding: 10px 12%;
 }
 
  .card{
     width: 16rem;
     height: 20rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 15%;
+    
  }
  .card:hover{
     transform: scale(1.2);
