@@ -75,8 +75,27 @@ end_date_default = last_7_days_data['datahora'].max().strftime('%Y-%m-%d')
 
 fig_main, fig_solo, fig_temperatura, fig_ambiente, fig_agua = create_figures(dados)
 
+@app.callback(
+    [Output('my-date-picker-range', 'available_dates'),
+     Output('my-date-picker-range', 'start_date'),
+     Output('my-date-picker-range', 'end_date')],
+    [Input('app-layout', 'children')]
+)
+def update_available_dates(n):
+    global dados
+    dados = load_data()
+    dados['datahora']=pd.to_datetime(dados['datahora'])
+    available_dates = dados['datahora'].dt.date.unique()
+    last_7_days_data = dados[dados['datahora'] >= dados['datahora'].max() - pd.DateOffset(days=7)]
+    start_date_default = last_7_days_data['datahora'].min().strftime('%Y-%m-%d')
+    end_date_default = last_7_days_data['datahora'].max().strftime('%Y-%m-%d')
+    start_date=start_date_default
+    end_date=end_date_default
+
+    return available_dates, start_date, end_date
+
     # Layout do Dash
-app.layout = html.Div([
+app.layout = html.Div(id='app-layout', children=[
     html.Div([
     dcc.DatePickerRange(
     id='my-date-picker-range',
@@ -138,7 +157,8 @@ app.layout = html.Div([
      Output('id_solo', 'figure'),
      Output('id_temp', 'figure'),
      Output('id_ambiente', 'figure'),
-     Output('id_agua', 'figure')],
+     Output('id_agua', 'figure'),
+     Output("table-wrap", "children")],
     Input('my-date-picker-range', 'start_date'),
     Input('my-date-picker-range', 'end_date')
 )
@@ -152,5 +172,8 @@ def update_graph(start_date, end_date):
     dados_filtered = filter_data(dados, start_date, end_date)
     # Create the updated Plotly figure
     fig_main, fig_solo, fig_temperatura, fig_ambiente, fig_agua  = create_figures(dados_filtered)
+
+    # Create/update the Dash table with filtered data
+    table = dash_table.DataTable(data=dados_filtered.to_dict('records'), page_size=5)
     
-    return fig_main, fig_solo, fig_temperatura, fig_ambiente, fig_agua
+    return fig_main, fig_solo, fig_temperatura, fig_ambiente, fig_agua, table
