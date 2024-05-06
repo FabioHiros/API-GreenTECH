@@ -41,9 +41,11 @@ No desenvolvimento do produto, seguimos a abordagem ágil do Scrum, um método c
 
 <!-- video sprint 1 -->
 <h2>Sprint 1</h2>
+
 https://github.com/FabioHiros/API-GreenTECH/assets/144804717/87000834-bb4b-43c3-adba-09a89bdb7615
 
 <h2>Sprint 2</h2>
+
 https://github.com/FabioHiros/API-GreenTECH/assets/144804717/86861f28-0e6a-4991-afc4-3cbac6da6cf8
 
 
