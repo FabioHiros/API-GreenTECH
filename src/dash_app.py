@@ -1,14 +1,12 @@
+from connect_db import connect
 from dash import Dash, html, dash_table, dcc, Input, Output
 import plotly.graph_objects as go
 import pandas as pd
-from datetime import date
+from datetime import datetime,timedelta
 import dash_bootstrap_components as dbc
 
 app = Dash(__name__, url_base_pathname="/dash/", meta_tags=[{'name': 'viewport',
                                                              'content': 'width=device-width, initial-scale=1.0, maximun-scale=1.2, minimun-scale=0.5'}])
-
-def load_data():
-    return pd.read_csv('dadosensores_media.csv')
 
 def filter_data(df, start_date, end_date):
     return df[(df['datahora'] >= start_date) & (df['datahora'] < end_date)]
@@ -66,45 +64,47 @@ def create_figures(dados):
     
     return fig_main, fig_solo, fig_temperatura, fig_ambiente, fig_agua
 
-dados=load_data()
-dados['datahora']=pd.to_datetime(dados['datahora'])
-available_dates = dados['datahora'].dt.date.unique()
-last_7_days_data = dados[dados['datahora'] >= dados['datahora'].max() - pd.DateOffset(days=7)]
-start_date_default = last_7_days_data['datahora'].min().strftime('%Y-%m-%d')
-end_date_default = last_7_days_data['datahora'].max().strftime('%Y-%m-%d')
+engine=connect()
+available_dates = pd.read_sql("SELECT DISTINCT DATE(datahora) AS available_date FROM estufa;", engine)
+seven_days = available_dates['available_date'].max() - timedelta(days=7)
+selected_days = pd.read_sql(f"SELECT * FROM estufa WHERE datahora >= '{seven_days}'", engine)
+engine.dispose()
 
-fig_main, fig_solo, fig_temperatura, fig_ambiente, fig_agua = create_figures(dados)
+fig_main, fig_solo, fig_temperatura, fig_ambiente, fig_agua = create_figures(selected_days)
+
+def initialize_date_picker_and_graphs():
+    global available_dates
+    engine = connect()
+    available_dates_df = pd.read_sql("SELECT DISTINCT DATE(datahora) AS available_date FROM estufa;", engine)
+    seven_days = available_dates_df['available_date'].max() - timedelta(days=7)
+    selected_days_df = pd.read_sql(f"SELECT * FROM estufa WHERE datahora >= '{seven_days}'", engine)
+    engine.dispose()
+    start_date = selected_days_df['datahora'].min()
+    end_date = selected_days_df['datahora'].max()
+
+    return start_date, end_date
 
 @app.callback(
-    [Output('my-date-picker-range', 'available_dates'),
-     Output('my-date-picker-range', 'start_date'),
+    [Output('my-date-picker-range', 'start_date'),
      Output('my-date-picker-range', 'end_date')],
     [Input('app-layout', 'children')]
 )
 def update_available_dates(n):
-    global dados
-    dados = load_data()
-    dados['datahora']=pd.to_datetime(dados['datahora'])
-    available_dates = dados['datahora'].dt.date.unique()
-    last_7_days_data = dados[dados['datahora'] >= dados['datahora'].max() - pd.DateOffset(days=7)]
-    start_date_default = last_7_days_data['datahora'].min().strftime('%Y-%m-%d')
-    end_date_default = last_7_days_data['datahora'].max().strftime('%Y-%m-%d')
-    start_date=start_date_default
-    end_date=end_date_default
+    return initialize_date_picker_and_graphs()
 
-    return available_dates, start_date, end_date
+#     return available_dates, start_date, end_date
 
     # Layout do Dash
 app.layout = html.Div(id='app-layout', children=[
     html.Div([
     dcc.DatePickerRange(
     id='my-date-picker-range',
-        min_date_allowed=available_dates.min(),
-        max_date_allowed=available_dates.max(),
-        initial_visible_month=available_dates.max(),
-        start_date=start_date_default,
-        end_date=end_date_default,
-        disabled_days=[date for date in pd.date_range(start=available_dates.min(), end=available_dates.max()) if date.date() not in available_dates]
+        min_date_allowed=available_dates['available_date'].min(),
+        max_date_allowed=available_dates['available_date'].max(),
+        initial_visible_month=initialize_date_picker_and_graphs()[1],
+        start_date=selected_days['datahora'].min(),
+        end_date=selected_days['datahora'].max(),
+        # disabled_days=[date for date in pd.date_range(start=available_dates['available_date'].min(), end=available_dates['available_date'].max()) if date.date() not in available_dates['available_date']]
     ),
     html.Div(id='output-container-date-picker-range'),
     dcc.Graph(
@@ -116,7 +116,7 @@ app.layout = html.Div(id='app-layout', children=[
         }
     ),
     html.Div(
-    dash_table.DataTable(data=dados.to_dict('records'), page_size=5 ),id="table-wrap")
+    dash_table.DataTable(data=selected_days.to_dict('records'), page_size=5 ),id="table-wrap")
     ],style={'width': '100%'}),
     dbc.Row([
         dbc.Col([
@@ -163,17 +163,17 @@ app.layout = html.Div(id='app-layout', children=[
     Input('my-date-picker-range', 'end_date')
 )
 def update_graph(start_date, end_date):
-    start_date = pd.to_datetime(start_date)  # Convert to datetime64[ns]
-    end_date = pd.to_datetime(end_date) + pd.DateOffset(days=1)  # Convert to datetime64[ns] and add one day
-    
-    # print(start_date)
-    # print(end_date)
-    # Filter the DataFrame based on the selected date range
-    dados_filtered = filter_data(dados, start_date, end_date)
+    engine=connect()
+    start_date
+    end_date
+
+# Construct the SQL query to select data within the specified date range
+    sql_query = f"SELECT * FROM estufa WHERE DATE(datahora) BETWEEN '{start_date}' AND '{end_date}'"
+    selected_days = pd.read_sql(sql_query, engine)
     # Create the updated Plotly figure
-    fig_main, fig_solo, fig_temperatura, fig_ambiente, fig_agua  = create_figures(dados_filtered)
+    fig_main, fig_solo, fig_temperatura, fig_ambiente, fig_agua  = create_figures(selected_days)
 
     # Create/update the Dash table with filtered data
-    table = dash_table.DataTable(data=dados_filtered.to_dict('records'), page_size=5)
-    
+    table = dash_table.DataTable(data=selected_days.to_dict('records'), page_size=5)
+    engine.dispose()
     return fig_main, fig_solo, fig_temperatura, fig_ambiente, fig_agua, table

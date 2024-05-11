@@ -1,3 +1,4 @@
+from connect_db import connect
 from dash_app import app as dash_app
 from flask import Flask, render_template, request, make_response, jsonify
 import pandas as pd
@@ -18,8 +19,13 @@ def allowed_file(filename):
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 def update_file():
-    new_data=pd.read_csv('./uploads/dadosensores.csv')
-    new_data.to_csv('dadosensores_media.csv', mode='a', header=False, index=False)
+    try:
+        estufadb = connect()
+        new_data = pd.read_csv('./uploads/dadosensores.csv')
+        new_data.to_sql(name='estufa', con=estufadb, if_exists='append', index=False)
+        print("Data appended successfully.")
+    except Exception as e:
+        print("Error appending data:", e)
 
 # Rotas do Flask
 @app.route("/")
