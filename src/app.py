@@ -6,7 +6,6 @@ import os
 
 app = Flask(__name__)
 
-app.config['UPLOAD_FOLDER'] = './uploads'
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 ALLOWED_EXTENSIONS = {'csv'}
 
@@ -18,10 +17,10 @@ def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-def update_file():
+def update_file(file):
     try:
         estufadb = connect()
-        new_data = pd.read_csv('./uploads/dadosensores.csv')
+        new_data=pd.read_csv(file)
         new_data.to_sql(name='estufa', con=estufadb, if_exists='append', index=False)
         print("Data appended successfully.")
     except Exception as e:
@@ -53,10 +52,7 @@ def upload_file():
     if 'file' in request.files:
         file = request.files['file']
         if file and allowed_file(file.filename):
-            filename = "dadosensores.csv"
-            # Here you should save the file
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            update_file()
+            update_file(file)
             return jsonify({'message': 'Upload feito com sucesso!'})
 
     return jsonify({'message': 'Upload falhou!'}), 400
