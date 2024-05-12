@@ -1,3 +1,4 @@
+# app.py
 from connect_db import connect
 from dash_app import app as dash_app
 from flask import Flask, render_template, request, make_response, jsonify
@@ -9,6 +10,9 @@ app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 ALLOWED_EXTENSIONS = {'csv'}
 
+# Establish the database connection
+estufadb = connect()
+
 @app.errorhandler(413)
 def too_large(e):
     return make_response(jsonify(message="Arquivo muito grande!"), 413)
@@ -19,7 +23,6 @@ def allowed_file(filename):
 
 def update_file(file):
     try:
-        estufadb = connect()
         new_data=pd.read_csv(file)
         new_data.to_sql(name='estufa', con=estufadb, if_exists='append', index=False)
         print("Data appended successfully.")
