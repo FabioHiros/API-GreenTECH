@@ -168,7 +168,7 @@ https://github.com/FabioHiros/API-GreenTECH/assets/144804717/86861f28-0e6a-4991-
         <td> <img src="./mgt/pfp/fjr.jpeg" alt="ft de perfil" height="40px" width="40px"> </td>
         <td> Scrum Team </td>
         <td> Fabio Fonseca </td>
-        <td> <a href="http:https://www.linkedin.com/in/fabiofonsecajodi/
+        <td> <a href="https://www.linkedin.com/in/fabiofonsecajodi/
         "> <img src='https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&color=1AB85C'/> </a> </td>
         <td> <a href="https://github.com/fabiojotar"> <img src='https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white&color=1AB85C'/> </a> </td>
     </tr>
