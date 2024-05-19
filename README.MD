@@ -19,7 +19,7 @@ O produto visa criar uma plataforma online que funcione como um centro de dados 
 
 <h2 align=center id="metodologia">👩‍🏫Metodologia</h2>
 
-No desenvolvimento do produto, seguimos a abordagem ágil do Scrum, um método conhecido por sua flexibilidade e eficácia. Utilizando essa metodologia, dividimos o trabalho em ciclos chamados Sprints, nos quais entregamos incrementos do produto. Antes de cada Sprint, priorizamos as tarefas com base no valor que agregariam ao cliente, definindo assim nosso Produto Mínimo Viável (MVP). Com o MVP estabelecido, construímos o backlog do projeto, detalhando as tarefas necessárias para alcançar nossos objetivos.
+No desenvolvimento do sistema, seguimos a abordagem ágil do Scrum, um método conhecido por sua flexibilidade e eficácia. Utilizando essa metodologia, dividimos o trabalho em ciclos chamados Sprints, nos quais entregamos incrementos do produto. Antes de cada Sprint, priorizamos as tarefas com base no valor que agregariam ao cliente, definindo assim nosso Produto Mínimo Viável (MVP). Com o MVP estabelecido, construímos o backlog do projeto, detalhando as tarefas necessárias para alcançar nossos objetivos.
 
 
 <h2 align=center id="tecnologias">⌨️Tecnologias</h2>
