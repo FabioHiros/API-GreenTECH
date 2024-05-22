@@ -22,8 +22,10 @@ def update_file(file):
         estufadb = connect()
         new_data=pd.read_csv(file)
         new_data.to_sql(name='estufa', con=estufadb, if_exists='append', index=False)
+        estufadb.dispose()
         print("Data appended successfully.")
     except Exception as e:
+        estufadb.dispose()
         print("Error appending data:", e)
 
 # Rotas do Flask

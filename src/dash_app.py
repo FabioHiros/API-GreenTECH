@@ -93,23 +93,29 @@ fig_main, fig_solo, fig_temperatura, fig_ambiente, fig_agua = create_figures(sel
 
 def initialize_date_picker_and_graphs():
     engine = connect()
-    available_dates_df = pd.read_sql("SELECT DISTINCT DATE(datahora) AS available_date FROM estufa;", engine)
-
-    if available_dates_df.empty:
+    available_dates = pd.read_sql("SELECT DISTINCT DATE(datahora) AS available_date FROM estufa;", engine)
+    if available_dates.empty:
         # If there's no data in the database, return default start and end dates
         engine.dispose()
-        return datetime.now() - timedelta(days=7), datetime.now()
+        return datetime.now() - timedelta(days=7), datetime.now(), datetime.now() - timedelta(days=7), datetime.now(), datetime.now(), []
     else:
-        seven_days = available_dates_df['available_date'].max() - timedelta(days=7)
-        selected_days_df = pd.read_sql(f"SELECT * FROM estufa WHERE datahora >= '{seven_days}'", engine)
+        seven_days = available_dates['available_date'].max() - timedelta(days=7)
+        selected_days = pd.read_sql(f"SELECT * FROM estufa WHERE datahora >= '{seven_days}'", engine)
         engine.dispose()
-        start_date = selected_days_df['datahora'].min()
-        end_date = selected_days_df['datahora'].max()
-        return start_date, end_date
+        start_date = selected_days['datahora'].min()
+        end_date = selected_days['datahora'].max()
+        generated_dates = pd.DataFrame({'all_dates':pd.date_range(start=available_dates['available_date'].min(), end=available_dates['available_date'].max())})
+        available_dates['available_date'] = pd.to_datetime(available_dates['available_date']).dt.strftime('%Y-%m-%d')
+        disabled_days = [date for date in generated_dates['all_dates'] if date.strftime('%Y-%m-%d') not in available_dates['available_date'].values]
+        return available_dates['available_date'].min(), available_dates['available_date'].max(), start_date, end_date, end_date, disabled_days
 
 @app.callback(
-    [Output('my-date-picker-range', 'start_date'),
-     Output('my-date-picker-range', 'end_date')],
+    [Output('my-date-picker-range', 'min_date_allowed'),
+     Output('my-date-picker-range', 'max_date_allowed'),
+     Output('my-date-picker-range', 'start_date'),
+     Output('my-date-picker-range', 'end_date'),
+     Output('my-date-picker-range', 'initial_visible_month'),
+     Output('my-date-picker-range', 'disabled_days')],
     [Input('app-layout', 'children')]
 )
 def update_available_dates(n):
@@ -124,11 +130,12 @@ app.layout = html.Div(id='app-layout', style={'overflow': 'hidden'}, children=[
         dbc.Col(
             dcc.DatePickerRange(
                 id='my-date-picker-range',
-                min_date_allowed=available_dates['available_date'].min(),
-                max_date_allowed=available_dates['available_date'].max(),
-                initial_visible_month=initialize_date_picker_and_graphs()[1],
-                start_date=initialize_date_picker_and_graphs()[0],
-                end_date=initialize_date_picker_and_graphs()[1],
+                min_date_allowed=initialize_date_picker_and_graphs()[0],
+                max_date_allowed=initialize_date_picker_and_graphs()[1],
+                initial_visible_month=initialize_date_picker_and_graphs()[4],
+                start_date=initialize_date_picker_and_graphs()[2],
+                end_date=initialize_date_picker_and_graphs()[3],
+                disabled_days=initialize_date_picker_and_graphs()[5]
             ),
             xs={'size':12}, sm={'size':11, 'offset':1}
         ),
