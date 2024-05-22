@@ -22,62 +22,18 @@
 }
 
 
-/* RESPONSIVO */
 
-
-/* media para o texto ocupar todo o espaço quando estiver em um celular */
-@media (max-width: 190px) {
-    .row{
-    width: 120%;
-    }
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Evita o scroll horizontal */
 }
 
- 
-
-@media (max-width: 18px) {
-    #c-card .col {
-      flex: 0 0 40%;  
-      width: 100%;
-    }
-  }
-
-
-/* media para virar coluna quando estiver em um celular */
-@media (max-width: 500px) {
-    .row.justify-content-around {
-      flex-direction: column;
-    }
-  }
-
-
-  /* imagem  */
-
-  @media only screen and (max-width: 768px) {
-    .figure {
-        display: none;
-    }
+#id_main, #id_solo,#id_temp, #id_ambiente,#id_agua{
+    max-width: 100%;
+    height: auto;  /* Ajusta a altura automaticamente */
 }
 
-/* cards */
-@media only screen and (max-width: 768px) {
-    #c-card {
-        display: flex;
-        flex-wrap: wrap;
-        padding-right: 53vw;
-        justify-content: start;
-    }  
-}
-
-
-  
-@media (max-width: 991.98px) {
-    .resize_grafico_home img{
-        width: 90vw;
-    }
-    .container_grafinfo{
-        display: none;
-    }
-}
 
 
 /* ESTILIZAÇÃO DO INDEX */
@@ -91,7 +47,7 @@
     color: rgb(86, 105, 64) ;
     font-weight: bold;
 }
- 
+
 .h5{
     color: rgb(106, 106, 106);
     text-align: justify;
@@ -170,17 +126,17 @@ h2{
 
 /* catões de instrução */
 
- 
 
- .col{
-     padding: 10px 12%;
+
+.col{
+     padding: 10px 5%;
 }
 
  .card{
     width: 16rem;
     height: 20rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-left: 15%;
+    margin-left: 10%;
     
  }
  .card:hover{
@@ -198,4 +154,83 @@ h2{
     margin-bottom: 4%;
  }
 
+/* RESPONSIVO */
 
+/* media para o texto ocupar todo o espaço quando estiver em um celular */
+@media (max-width: 190px) {
+    .row{
+    width: 120%;
+    }
+}
+
+ 
+
+@media (max-width: 18px) {
+    #c-card .col {
+      flex: 0 0 40%;  
+      width: 100%;
+    }
+  }
+
+
+/* media para virar coluna quando estiver em um celular */
+@media (max-width: 500px) {
+    .row.justify-content-around {
+      flex-direction: column;
+    }
+
+  }
+
+
+  /* imagem  */
+
+  @media only screen and (max-width: 768px) {
+    .figure {
+        display: none;
+    }
+}
+
+/* cards */
+@media only screen and (max-width: 768px) {
+    #c-card {
+        display: flex;
+        flex-wrap: wrap;
+        padding-right: 53vw;
+        justify-content: start;
+    }  
+}
+
+
+  
+@media (max-width: 991.98px) {
+    .resize_grafico_home img{
+        width: 90vw;
+    }
+    .container_grafinfo{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .h1-index{
+        font-size: 3.2rem;
+    }
+    .card:hover{
+        transform: none;
+        transition-duration: none;
+     }
+     .card{
+        width: 13rem;
+        height: 20rem;
+        margin: 10px 50%;
+        
+     }
+     .card-img-top{
+        width: 30px;
+        height: 30px;
+        margin-bottom: 30%;
+     }
+     .como{
+        font-size: 2.5rem;
+     }
+}

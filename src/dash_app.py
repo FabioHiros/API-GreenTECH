@@ -5,8 +5,9 @@ import pandas as pd
 from datetime import datetime,timedelta
 import dash_bootstrap_components as dbc
 
-app = Dash(__name__, url_base_pathname="/dash/", meta_tags=[{'name': 'viewport',
-                                                             'content': 'width=device-width, initial-scale=1.0, maximun-scale=1.2, minimun-scale=0.5'}])
+app = Dash(__name__, url_base_pathname="/dash/", external_stylesheets=[dbc.themes.BOOTSTRAP]
+           ,meta_tags=[{'name': 'viewport',
+                        'content': 'width=device-width, initial-scale=1.0, maximun-scale=1.0, minimun-scale=0.5'}])
 
 def filter_data(df, start_date, end_date):
     return df[(df['datahora'] >= start_date) & (df['datahora'] < end_date)]
@@ -42,7 +43,10 @@ def create_figures(dados):
                         xanchor="right", # Positioning anchor for the x-axis
                         x=1 ,# Adjust as needed, 1 for moving it to the right of the plot
                     entrywidthmode='fraction'
-                    ))
+                    )
+                    ,margin=dict(l=0, r=30, t=0, b=0),
+                    modebar=dict(orientation = "v")
+                    )
 
         #Figs da esquerda
         fig_solo = go.Figure(data=[
@@ -114,62 +118,74 @@ def update_available_dates(n):
 #     return available_dates, start_date, end_date
 
     # Layout do Dash
-app.layout = html.Div(id='app-layout', children=[
-    html.Div([
-    dcc.DatePickerRange(
-    id='my-date-picker-range',
-        min_date_allowed=available_dates['available_date'].min(),
-        max_date_allowed=available_dates['available_date'].max(),
-        initial_visible_month=initialize_date_picker_and_graphs()[1],
-        start_date=initialize_date_picker_and_graphs()[0],
-        end_date=initialize_date_picker_and_graphs()[1],
-        # disabled_days=[date for date in pd.date_range(start=available_dates['available_date'].min(), end=available_dates['available_date'].max()) if date.date() not in available_dates['available_date']]
-    ),
-    html.Div(id='output-container-date-picker-range'),
-    dcc.Graph(
-        id='id_main',
-        figure=fig_main,
-        config={
-                'displaylogo': False
+app.layout = html.Div(id='app-layout', style={'overflow': 'hidden'}, children=[
+    html.Br(),
+    dbc.Row([
+        dbc.Col(
+            dcc.DatePickerRange(
+                id='my-date-picker-range',
+                min_date_allowed=available_dates['available_date'].min(),
+                max_date_allowed=available_dates['available_date'].max(),
+                initial_visible_month=initialize_date_picker_and_graphs()[1],
+                start_date=initialize_date_picker_and_graphs()[0],
+                end_date=initialize_date_picker_and_graphs()[1],
+            ),
+            xs={'size':12}, sm={'size':11, 'offset':1}
+        ),
+        
+        html.Div(id='output-container-date-picker-range'),
+        html.Br(),
+        dbc.Col(
+            dcc.Graph(
+                id='id_main',
+                figure=fig_main,
+                config={'displaylogo': False,},
+                className='no-padding-margin',
                 
-        }
-    ),
-    html.Div(
-    dash_table.DataTable(data=selected_days.to_dict('records'), page_size=5 ),id="table-wrap")
-    ],style={'width': '100%'}),
+            ),
+            width={'size': 12},
+            className='no-padding-margin'
+        ),
+        dbc.Col(
+            dash_table.DataTable(
+                data=selected_days.to_dict('records'), page_size=5
+            ),
+            id="table-wrap",
+            width={'size': 12},
+            className='no-padding-margin'
+        )
+    ], style={'width': '100%', 'justify-content': 'center'}),
     dbc.Row([
         dbc.Col([
-        dcc.Graph(
-            id='id_solo',
-            figure=fig_solo,
-            config={
-                    'displayModeBar': False
-            }
-        ),
-        dcc.Graph(
-            id='id_temp',
-            figure=fig_temperatura,
-            config={
-                    'displayModeBar': False
-            }
-        )],style={'width': '50%', 'min-width':'22rem'}),
+            dcc.Graph(
+                id='id_solo',
+                figure=fig_solo,
+                config={'displayModeBar': False},
+                className='no-padding-margin'
+            ),
+            dcc.Graph(
+                id='id_temp',
+                figure=fig_temperatura,
+                config={'displayModeBar': False},
+                className='no-padding-margin'
+            )
+        ], xs=12, sm=12, md=6, lg=6, xl=6, className='no-padding-margin'),
         dbc.Col([
-        dcc.Graph(
-            id='id_ambiente',
-            figure=fig_ambiente,
-            config={
-                    'displayModeBar': False
-            }
-        ),
-        dcc.Graph(
-            id='id_agua',
-            figure=fig_agua,
-            config={
-                    'displayModeBar': False
-            }
-        )],style={'width': '50%', 'min-width':'22rem'})
-    ],style={'width': '100%'})
-],style={'width': '100%', 'min-width':'400px'})
+            dcc.Graph(
+                id='id_ambiente',
+                figure=fig_ambiente,
+                config={'displayModeBar': False},
+                className='no-padding-margin'
+            ),
+            dcc.Graph(
+                id='id_agua',
+                figure=fig_agua,
+                config={'displayModeBar': False},
+                className='no-padding-margin'
+            )
+        ], xs=12, sm=12, md=6, lg=6, xl=6, className='no-padding-margin')
+    ], style={'width': '100%'})
+])
 
 @app.callback(
     [Output('id_main', 'figure'),

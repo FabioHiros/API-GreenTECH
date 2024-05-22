@@ -18,3 +18,10 @@
 .dash-graph {
     zoom: 0.85;
   }
+
+  .no-padding-margin {
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+}
+  
