@@ -76,18 +76,9 @@ def create_figures(dados):
         
     return fig_main, fig_solo, fig_temperatura, fig_ambiente, fig_agua
 
-engine=connect()
-available_dates=pd.read_sql("SELECT DISTINCT DATE(datahora) AS available_date FROM estufa;", engine)
-if available_dates.empty:
-    engine.dispose()
-    start_date = datetime.now() - timedelta(days=7)
-    end_date = datetime.now()
-    selected_days = pd.DataFrame()
-    available_dates = pd.DataFrame({'available_date': [start_date, end_date]})
-else:
-    seven_days = available_dates['available_date'].max() - timedelta(days=7)
-    selected_days = pd.read_sql(f"SELECT * FROM estufa WHERE datahora >= '{seven_days}'", engine)
-    engine.dispose()
+start_date = datetime.now() - timedelta(days=7)
+end_date = datetime.now()
+selected_days = pd.DataFrame()
 
 fig_main, fig_solo, fig_temperatura, fig_ambiente, fig_agua = create_figures(selected_days)
 
@@ -130,12 +121,12 @@ app.layout = html.Div(id='app-layout', style={'overflow': 'hidden'}, children=[
         dbc.Col(
             dcc.DatePickerRange(
                 id='my-date-picker-range',
-                min_date_allowed=initialize_date_picker_and_graphs()[0],
-                max_date_allowed=initialize_date_picker_and_graphs()[1],
-                initial_visible_month=initialize_date_picker_and_graphs()[4],
-                start_date=initialize_date_picker_and_graphs()[2],
-                end_date=initialize_date_picker_and_graphs()[3],
-                disabled_days=initialize_date_picker_and_graphs()[5]
+                min_date_allowed=start_date,
+                max_date_allowed=end_date,
+                initial_visible_month=end_date,
+                start_date=start_date,
+                end_date=end_date,
+                disabled_days=[]
             ),
             xs={'size':12}, sm={'size':11, 'offset':1}
         ),
