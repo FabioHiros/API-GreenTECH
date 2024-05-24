@@ -24,4 +24,12 @@
     margin: 0 !important;
     border: none !important;
 }
-  
+@media screen and (max-width: 350px){
+.DateInput_input, .DateInput_input_1, .DateInput_input__focused, .DateInput_input__focused_2{
+    font-size: 0.7rem;
+}
+
+.DateInput, .DateInput_1{
+    width: 80px;
+}
+}
