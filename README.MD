@@ -48,7 +48,9 @@ https://github.com/FabioHiros/API-GreenTECH/assets/144804717/87000834-bb4b-43c3-
 
 https://github.com/FabioHiros/API-GreenTECH/assets/144804717/86861f28-0e6a-4991-afc4-3cbac6da6cf8
 
+<h2>Sprint 3 </h2>
 
+https://github.com/FabioHiros/API-GreenTECH/assets/144804717/0cfe0470-d654-4129-be84-2d06721af45c
 
 
 <h2 align=center id="como_utilizar">💻Como utilizar o projeto:</h2>
@@ -75,8 +77,11 @@ https://github.com/FabioHiros/API-GreenTECH/assets/144804717/86861f28-0e6a-4991-
 
 | Item                                                     | Data de Entrega | Grau de Prioridade  | ID |
 |----------------------------------------------------------|-----------------|---------------------|----|
-| Implementação de Dados                                               |05/05           | 60                | 01 |
-| Implementação para Upload                                         | 03/05           | 50               | 02 |
+| Implementação de banco de dados relacional                                               |13/05           | 45                | 01 |
+| Melhorias de Desempenho Funcional                                         | 20/05           | 40               | 02 |
+| Leitura temporal de dados                                         | 13/05           | 35               | 03 |
+| Responsividade                                         | 21/05           | 30               | 04 |
+| Nuvem                                         | 25/05           | 25               | 05 |
 
 <BR>
 <br>
@@ -98,7 +103,8 @@ https://github.com/FabioHiros/API-GreenTECH/assets/144804717/86861f28-0e6a-4991-
 | Melhorias de Desempenho Funcional | 40 |#11| "Enquanto cliente quero melhor desempenho funcional". | **3** |
 | Leitura temporal de dados  | 35 |#12| "Enquanto cliente quero leitura por hora dos dados". | **3** |
 | Responsividade  | 30 |#13| "Enquanto cliente quero que a pagina suporte, website e mobile" | **3** |
-| README | 25 |#14| Documentação do projeto. | **4** |
+| Nuvem  | 25 |#14| "Enquanto cliente quero que o sistema esteja na nuvem" | **3** |
+| README | 20 |#15| Documentação do projeto. | **4** |
 
 
 <!--  -->
