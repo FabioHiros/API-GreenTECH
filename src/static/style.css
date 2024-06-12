@@ -21,7 +21,14 @@
     width: 1.1;
 }
 
-
+.card-link {
+    text-decoration: none;
+    color: inherit; /* Ensure the text color is inherited from the surrounding elements */
+}
+  
+.card-link:hover {
+    text-decoration: none; /* Ensures no underline on hover */
+}
 
 body {
     margin: 0;
