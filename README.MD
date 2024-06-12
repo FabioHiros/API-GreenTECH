@@ -54,20 +54,33 @@ https://github.com/FabioHiros/API-GreenTECH/assets/144804717/0cfe0470-d654-4129-
 
 
 <h2 align=center id="como_utilizar">💻Como utilizar o projeto:</h2>
+<h3>Rodando Localmente:</h3>
 <ol>
-<li>Instale o <a href="https://www.python.org/">Python</a> mais atualizado </li>
-<li>Baixe os arquivos do projeto</li>
-<li>Abra o cmd e entre na pasta do projeto<br>
-<code>cd caminho_para_sua_pasta/src</code></li>
-<li>Crie o ambiente virtual : Utilize os comandos abaixo no cmd que você utilizou no passo anterior<br>
+<li>Instale o <a href="https://www.python.org/">Python</a> e <a href="https://dev.mysql.com/downloads/mysql/">MySQL Server</a> mais atualizado.</li>
+<li>Baixe os arquivos do projeto.</li>
+<li>Abra o CMD e digite:<br>
+<code>mysql -u root -p</code></li>
+<li>Digite a senha do seu usuário root, em seguida digite o comando:<br>
+<code>source C:\Caminho\Do\Projeto<strong>\mgt\database\dadosensores_setup.sql</strong></code></li>
+<li>Feche o prompt do mysql e navegue até C:\Caminho\Do\Projeto<strong>\src\</strong>, usando o CMD nessa pasta digite:<br>
 <code>python -m venv venv </code><br>
 <code>.\venv\Scripts\activate </code><br>
 <code>pip install -r requirements.txt</code></li>
-<li>Rodando o programa:
-
+<li>Agora está pronto para rodar o projeto, apenas digite:
 <code>flask run</code></li>
-    copie o ip que aparece para o navegador
-
+    (Copie o IP que aparecer e cole no navegador)
+</ol>
+<h3>Iniciando pelo AWS:</h3>
+<ol>
+<li>Selecione o botão 'Executar Instâncias'.</li>
+<li>Dê um nome à instância e escolha o SO Ubuntu.</li>
+<li>Depois de escolher suas configurações abra a aba 'Detalhes Avançados' e vá ao final da página.</li>
+<li>Em 'Dados do usuário' clique em 'Escolher arquivo'.</li>
+<li>Selecione o arquivo:<br>
+C:\Caminho\Do\Projeto<strong>\mgt\api_dockerized\compose_config.sh</strong></li>
+<li>Clique em 'Executar Instância' e espere um tempo para terminar o setup (pode demorar um pouco).</li>
+<li>Finalmente copie o IP da instância criada no navegador usando a porta 5000.<br>
+Exemplo: 100.90.80.70<strong>:5000</strong></li>
 </ol>
 
 <br><br>
