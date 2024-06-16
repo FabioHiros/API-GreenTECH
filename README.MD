@@ -90,11 +90,9 @@ Exemplo: 100.90.80.70<strong>:5000</strong></li>
 
 | Item                                                     | Data de Entrega | Grau de Prioridade  | ID |
 |----------------------------------------------------------|-----------------|---------------------|----|
-| Implementação de banco de dados relacional                                               |13/05           | 45                | 01 |
-| Melhorias de Desempenho Funcional                                         | 20/05           | 40               | 02 |
-| Leitura temporal de dados                                         | 13/05           | 35               | 03 |
-| Responsividade                                         | 21/05           | 30               | 04 |
-| Nuvem                                         | 25/05           | 25               | 05 |
+| Documentação                                               |12/06           | 20                | 01 |
+| Refinamento do sistema                                        | 07/06           | 15               | 02 |
+| Botão de Download                                         | 10/06           | 10               | 03 |
 
 <BR>
 <br>
@@ -118,6 +116,8 @@ Exemplo: 100.90.80.70<strong>:5000</strong></li>
 | Responsividade  | 30 |#13| "Enquanto cliente quero que a pagina suporte, website e mobile" | **3** |
 | Nuvem  | 25 |#14| "Enquanto cliente quero que o sistema esteja na nuvem" | **3** |
 | README | 20 |#15| Documentação do projeto. | **4** |
+| Refinamento do sistema | 15 |#16| Correções de bugs e melhorias de desempenho | **4** |
+| Botão de download | 10 |#17| "Eu como cliente quero um botão de download para baixar um csv padrão" | **4** |
 
 
 <!--  -->
